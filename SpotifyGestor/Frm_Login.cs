@@ -111,7 +111,7 @@ namespace SpotifyGestor
                 if (user.IsAdmin)
                 {
                     this.Hide();
-                    var form2 = new Frm_Admin();
+                    var form2 = new Frm_Admin(user);
                     form2.Closed += (s, args) => this.Close();
                     form2.Show();
                 }

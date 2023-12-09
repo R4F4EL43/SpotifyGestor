@@ -47,10 +47,12 @@
             // 
             // btn_Login
             // 
+            this.btn_Login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Login.BackColor = System.Drawing.SystemColors.ControlText;
             this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ForeColor = System.Drawing.Color.Red;
-            this.btn_Login.Location = new System.Drawing.Point(238, 345);
+            this.btn_Login.Location = new System.Drawing.Point(242, 345);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(199, 28);
@@ -61,11 +63,13 @@
             // 
             // lbl_Signup
             // 
+            this.lbl_Signup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Signup.AutoSize = true;
             this.lbl_Signup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Signup.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbl_Signup.Location = new System.Drawing.Point(343, 410);
+            this.lbl_Signup.Location = new System.Drawing.Point(347, 410);
             this.lbl_Signup.Name = "lbl_Signup";
             this.lbl_Signup.Size = new System.Drawing.Size(135, 16);
             this.lbl_Signup.TabIndex = 16;
@@ -76,10 +80,12 @@
             // 
             // lbl_Question
             // 
+            this.lbl_Question.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Question.AutoSize = true;
             this.lbl_Question.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Question.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_Question.Location = new System.Drawing.Point(206, 410);
+            this.lbl_Question.Location = new System.Drawing.Point(202, 410);
             this.lbl_Question.Name = "lbl_Question";
             this.lbl_Question.Size = new System.Drawing.Size(130, 16);
             this.lbl_Question.TabIndex = 15;
@@ -87,8 +93,10 @@
             // 
             // txt_Senha
             // 
+            this.txt_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Senha.Location = new System.Drawing.Point(238, 291);
+            this.txt_Senha.Location = new System.Drawing.Point(242, 291);
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.Size = new System.Drawing.Size(200, 22);
             this.txt_Senha.TabIndex = 14;
@@ -97,8 +105,10 @@
             // 
             // txt_Login
             // 
+            this.txt_Login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Login.Location = new System.Drawing.Point(238, 227);
+            this.txt_Login.Location = new System.Drawing.Point(242, 227);
             this.txt_Login.Name = "txt_Login";
             this.txt_Login.Size = new System.Drawing.Size(200, 22);
             this.txt_Login.TabIndex = 13;
@@ -106,10 +116,12 @@
             // 
             // lbl_Senha
             // 
+            this.lbl_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Senha.AutoSize = true;
             this.lbl_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Senha.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_Senha.Location = new System.Drawing.Point(234, 268);
+            this.lbl_Senha.Location = new System.Drawing.Point(238, 268);
             this.lbl_Senha.Name = "lbl_Senha";
             this.lbl_Senha.Size = new System.Drawing.Size(60, 20);
             this.lbl_Senha.TabIndex = 12;
@@ -117,10 +129,12 @@
             // 
             // lbl_Login
             // 
+            this.lbl_Login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Login.AutoSize = true;
             this.lbl_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Login.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_Login.Location = new System.Drawing.Point(234, 204);
+            this.lbl_Login.Location = new System.Drawing.Point(238, 204);
             this.lbl_Login.Name = "lbl_Login";
             this.lbl_Login.Size = new System.Drawing.Size(142, 20);
             this.lbl_Login.TabIndex = 11;
@@ -128,8 +142,10 @@
             // 
             // pb_Logo
             // 
+            this.pb_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_Logo.Image = global::SpotifyGestor.Properties.Resources.Logo;
-            this.pb_Logo.Location = new System.Drawing.Point(275, 34);
+            this.pb_Logo.Location = new System.Drawing.Point(279, 34);
             this.pb_Logo.Name = "pb_Logo";
             this.pb_Logo.Size = new System.Drawing.Size(125, 125);
             this.pb_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,10 +166,12 @@
             // 
             // lbl_Erro
             // 
+            this.lbl_Erro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Erro.AutoSize = true;
             this.lbl_Erro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Erro.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Erro.Location = new System.Drawing.Point(222, 172);
+            this.lbl_Erro.Location = new System.Drawing.Point(226, 172);
             this.lbl_Erro.Name = "lbl_Erro";
             this.lbl_Erro.Size = new System.Drawing.Size(0, 16);
             this.lbl_Erro.TabIndex = 19;
