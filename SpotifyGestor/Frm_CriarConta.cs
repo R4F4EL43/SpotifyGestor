@@ -13,7 +13,9 @@ namespace SpotifyGestor
     public partial class Frm_CriarConta : Form
     {
 
-        #region Variaevis
+
+        #region Variaveis
+
 
         Conta LoggedUser = null;
 
@@ -27,7 +29,8 @@ namespace SpotifyGestor
         public Frm_CriarConta(Conta User)
         {
             InitializeComponent();
-            this.LoggedUser = User;
+            LoggedUser = User;
+
         }
 
         #endregion
