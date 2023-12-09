@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_CriarConta = new System.Windows.Forms.Button();
             this.chb_IsAdmin = new System.Windows.Forms.CheckBox();
             this.txt_Senha = new System.Windows.Forms.TextBox();
@@ -38,7 +39,13 @@
             this.lbl_Nome = new System.Windows.Forms.Label();
             this.lbl_CriarConta = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.erp_Nome = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erp_Email = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erp_Senha = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Nome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Email)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Senha)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_CriarConta
@@ -73,7 +80,7 @@
             this.txt_Senha.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Senha.Location = new System.Drawing.Point(17, 229);
             this.txt_Senha.Name = "txt_Senha";
-            this.txt_Senha.Size = new System.Drawing.Size(405, 26);
+            this.txt_Senha.Size = new System.Drawing.Size(395, 26);
             this.txt_Senha.TabIndex = 31;
             // 
             // lbl_Senha
@@ -94,7 +101,7 @@
             this.txt_Email.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Email.Location = new System.Drawing.Point(17, 172);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(405, 26);
+            this.txt_Email.Size = new System.Drawing.Size(395, 26);
             this.txt_Email.TabIndex = 29;
             // 
             // lbl_Email
@@ -115,7 +122,7 @@
             this.txt_Nome.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Nome.Location = new System.Drawing.Point(17, 115);
             this.txt_Nome.Name = "txt_Nome";
-            this.txt_Nome.Size = new System.Drawing.Size(405, 26);
+            this.txt_Nome.Size = new System.Drawing.Size(395, 26);
             this.txt_Nome.TabIndex = 27;
             // 
             // lbl_Nome
@@ -151,6 +158,24 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // erp_Nome
+            // 
+            this.erp_Nome.BlinkRate = 0;
+            this.erp_Nome.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp_Nome.ContainerControl = this;
+            // 
+            // erp_Email
+            // 
+            this.erp_Email.BlinkRate = 0;
+            this.erp_Email.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp_Email.ContainerControl = this;
+            // 
+            // erp_Senha
+            // 
+            this.erp_Senha.BlinkRate = 0;
+            this.erp_Senha.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp_Senha.ContainerControl = this;
+            // 
             // Frm_CriarConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +196,9 @@
             this.Name = "Frm_CriarConta";
             this.Text = "Criar Conta";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Nome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Email)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Senha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +216,8 @@
         private System.Windows.Forms.TextBox txt_Nome;
         private System.Windows.Forms.Label lbl_Nome;
         private System.Windows.Forms.Label lbl_CriarConta;
+        private System.Windows.Forms.ErrorProvider erp_Nome;
+        private System.Windows.Forms.ErrorProvider erp_Email;
+        private System.Windows.Forms.ErrorProvider erp_Senha;
     }
 }
