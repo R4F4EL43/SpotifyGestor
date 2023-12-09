@@ -42,10 +42,15 @@
             this.erp_Nome = new System.Windows.Forms.ErrorProvider(this.components);
             this.erp_Email = new System.Windows.Forms.ErrorProvider(this.components);
             this.erp_Senha = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chb_IsArtista = new System.Windows.Forms.CheckBox();
+            this.txt_Artista = new System.Windows.Forms.TextBox();
+            this.lbl_Artista = new System.Windows.Forms.Label();
+            this.erp_Artista = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp_Nome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp_Email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp_Senha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Artista)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_CriarConta
@@ -66,7 +71,7 @@
             this.chb_IsAdmin.AutoSize = true;
             this.chb_IsAdmin.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_IsAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.chb_IsAdmin.Location = new System.Drawing.Point(17, 273);
+            this.chb_IsAdmin.Location = new System.Drawing.Point(17, 261);
             this.chb_IsAdmin.Name = "chb_IsAdmin";
             this.chb_IsAdmin.Size = new System.Drawing.Size(78, 24);
             this.chb_IsAdmin.TabIndex = 32;
@@ -82,6 +87,7 @@
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.Size = new System.Drawing.Size(395, 26);
             this.txt_Senha.TabIndex = 31;
+            this.txt_Senha.TextChanged += new System.EventHandler(this.txt_Senha_TextChanged);
             // 
             // lbl_Senha
             // 
@@ -103,6 +109,7 @@
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(395, 26);
             this.txt_Email.TabIndex = 29;
+            this.txt_Email.TextChanged += new System.EventHandler(this.txt_Email_TextChanged);
             // 
             // lbl_Email
             // 
@@ -124,6 +131,7 @@
             this.txt_Nome.Name = "txt_Nome";
             this.txt_Nome.Size = new System.Drawing.Size(395, 26);
             this.txt_Nome.TabIndex = 27;
+            this.txt_Nome.TextChanged += new System.EventHandler(this.txt_Nome_TextChanged);
             // 
             // lbl_Nome
             // 
@@ -176,12 +184,55 @@
             this.erp_Senha.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.erp_Senha.ContainerControl = this;
             // 
+            // chb_IsArtista
+            // 
+            this.chb_IsArtista.AutoSize = true;
+            this.chb_IsArtista.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chb_IsArtista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.chb_IsArtista.Location = new System.Drawing.Point(17, 355);
+            this.chb_IsArtista.Name = "chb_IsArtista";
+            this.chb_IsArtista.Size = new System.Drawing.Size(81, 24);
+            this.chb_IsArtista.TabIndex = 35;
+            this.chb_IsArtista.Text = "Artista";
+            this.chb_IsArtista.UseVisualStyleBackColor = true;
+            // 
+            // txt_Artista
+            // 
+            this.txt_Artista.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_Artista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Artista.ForeColor = System.Drawing.SystemColors.Control;
+            this.txt_Artista.Location = new System.Drawing.Point(17, 323);
+            this.txt_Artista.Name = "txt_Artista";
+            this.txt_Artista.Size = new System.Drawing.Size(395, 26);
+            this.txt_Artista.TabIndex = 37;
+            this.txt_Artista.TextChanged += new System.EventHandler(this.txt_Artista_TextChanged);
+            // 
+            // lbl_Artista
+            // 
+            this.lbl_Artista.AutoSize = true;
+            this.lbl_Artista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Artista.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Artista.Location = new System.Drawing.Point(13, 300);
+            this.lbl_Artista.Name = "lbl_Artista";
+            this.lbl_Artista.Size = new System.Drawing.Size(126, 20);
+            this.lbl_Artista.TabIndex = 36;
+            this.lbl_Artista.Text = "Nome Artistico";
+            // 
+            // erp_Artista
+            // 
+            this.erp_Artista.BlinkRate = 0;
+            this.erp_Artista.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp_Artista.ContainerControl = this;
+            // 
             // Frm_CriarConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(434, 461);
+            this.Controls.Add(this.txt_Artista);
+            this.Controls.Add(this.lbl_Artista);
+            this.Controls.Add(this.chb_IsArtista);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_CriarConta);
             this.Controls.Add(this.chb_IsAdmin);
@@ -202,6 +253,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.erp_Nome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp_Email)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp_Senha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Artista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +274,9 @@
         private System.Windows.Forms.ErrorProvider erp_Nome;
         private System.Windows.Forms.ErrorProvider erp_Email;
         private System.Windows.Forms.ErrorProvider erp_Senha;
+        private System.Windows.Forms.CheckBox chb_IsArtista;
+        private System.Windows.Forms.TextBox txt_Artista;
+        private System.Windows.Forms.Label lbl_Artista;
+        private System.Windows.Forms.ErrorProvider erp_Artista;
     }
 }
