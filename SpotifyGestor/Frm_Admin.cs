@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SpotifyGestor
 {
@@ -31,10 +32,14 @@ namespace SpotifyGestor
         }
         #endregion
 
+        #region Construtor
+
         public Frm_Admin()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         #region Eventos
 
@@ -67,12 +72,24 @@ namespace SpotifyGestor
 
         private void btn_TerminarSessão_Click(object sender, EventArgs e)
         {
-            //Terminar sessão
+            this.Hide();
+            var form2 = new Frm_Login();
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
         }
 
         private void btn_CriarPlaylist_Click(object sender, EventArgs e)
-        {
-            //Criar playlist
+        {            
+            if (txt_NomePlaylist.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Preencha todos os campos.");
+            }
+            else
+            {
+                Playlist playlist = new Playlist(Variaveis.Playlist.Count, txt_NomePlaylist.Text);
+                
+                Variaveis.Playlist.Add(playlist);
+            }
         }
 
         private void btn_CriarConta_Click(object sender, EventArgs e)
