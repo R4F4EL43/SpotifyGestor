@@ -120,4 +120,16 @@
   <data name="txt_Texto.Text" xml:space="preserve">
     <value>Esta ação termina a tua sessão do Spotify onde quer que tenhas sessão iniciada, seja nas apps do telemóvel, tablet e PC ou no leitor Web. Isto não inclui dispositivos de parceiros (por exemplo, colunas, consolas de jogos e televisões), pelo que nesses casos deves ir à página das tuas apps e selecionar "Remover acesso".</value>
   </data>
+  <metadata name="erp2_Nome.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="erp2_Artista.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>146, 17</value>
+  </metadata>
+  <metadata name="erp2_Duracao.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>275, 17</value>
+  </metadata>
+  <metadata name="erp2_Letra.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>404, 17</value>
+  </metadata>
 </root>
