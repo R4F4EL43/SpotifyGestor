@@ -63,8 +63,7 @@
             // 
             // lbl_Signup
             // 
-            this.lbl_Signup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Signup.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_Signup.AutoSize = true;
             this.lbl_Signup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,8 +79,7 @@
             // 
             // lbl_Question
             // 
-            this.lbl_Question.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Question.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_Question.AutoSize = true;
             this.lbl_Question.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Question.ForeColor = System.Drawing.SystemColors.Control;
@@ -142,7 +140,8 @@
             // 
             // pb_Logo
             // 
-            this.pb_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pb_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_Logo.Image = global::SpotifyGestor.Properties.Resources.Logo;
             this.pb_Logo.Location = new System.Drawing.Point(279, 34);
@@ -191,7 +190,9 @@
             this.Controls.Add(this.lbl_Senha);
             this.Controls.Add(this.lbl_Login);
             this.Controls.Add(this.pb_Logo);
+            this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "Frm_Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Frm_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).EndInit();

@@ -196,7 +196,9 @@
             this.Controls.Add(this.lbl_Nome);
             this.Controls.Add(this.lbl_EditarConta);
             this.ForeColor = System.Drawing.SystemColors.Control;
+            this.MaximizeBox = false;
             this.Name = "Frm_EditarConta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Conta";
             this.Load += new System.EventHandler(this.Frm_EditarConta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

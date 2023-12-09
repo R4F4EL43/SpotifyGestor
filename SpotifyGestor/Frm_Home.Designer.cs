@@ -36,6 +36,10 @@
             this.img_SmallPlaylist = new System.Windows.Forms.ImageList(this.components);
             this.txt_Library = new System.Windows.Forms.TextBox();
             this.pnl_Home = new System.Windows.Forms.Panel();
+            this.lbl_Playlists = new System.Windows.Forms.Label();
+            this.lbl_Musicas = new System.Windows.Forms.Label();
+            this.lvw_Playlists = new System.Windows.Forms.ListView();
+            this.lvw_Musicas = new System.Windows.Forms.ListView();
             this.lbl_Search = new System.Windows.Forms.Label();
             this.lbl_Inicio = new System.Windows.Forms.Label();
             this.pcb_ProfileIcon = new System.Windows.Forms.PictureBox();
@@ -47,10 +51,6 @@
             this.mni_Definicoes = new System.Windows.Forms.ToolStripMenuItem();
             this.mni_Separador = new System.Windows.Forms.ToolStripSeparator();
             this.mni_TerminarSessao = new System.Windows.Forms.ToolStripMenuItem();
-            this.lvw_Musicas = new System.Windows.Forms.ListView();
-            this.lvw_Playlists = new System.Windows.Forms.ListView();
-            this.lbl_Musicas = new System.Windows.Forms.Label();
-            this.lbl_Playlists = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_ProfileIcon)).BeginInit();
@@ -83,8 +83,8 @@
             // 
             this.img_LargePlaylist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_LargePlaylist.ImageStream")));
             this.img_LargePlaylist.TransparentColor = System.Drawing.Color.Transparent;
-            this.img_LargePlaylist.Images.SetKeyName(0, "nota-musical.png");
-            this.img_LargePlaylist.Images.SetKeyName(1, "album-de-musica.png");
+            this.img_LargePlaylist.Images.SetKeyName(0, "album-de-musica.png");
+            this.img_LargePlaylist.Images.SetKeyName(1, "nota-musical.png");
             // 
             // img_SmallPlaylist
             // 
@@ -106,6 +106,9 @@
             // 
             // pnl_Home
             // 
+            this.pnl_Home.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Home.Controls.Add(this.lbl_Playlists);
             this.pnl_Home.Controls.Add(this.lbl_Musicas);
             this.pnl_Home.Controls.Add(this.lvw_Playlists);
@@ -114,6 +117,65 @@
             this.pnl_Home.Name = "pnl_Home";
             this.pnl_Home.Size = new System.Drawing.Size(747, 474);
             this.pnl_Home.TabIndex = 22;
+            // 
+            // lbl_Playlists
+            // 
+            this.lbl_Playlists.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_Playlists.AutoSize = true;
+            this.lbl_Playlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Playlists.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Playlists.Location = new System.Drawing.Point(3, 257);
+            this.lbl_Playlists.Name = "lbl_Playlists";
+            this.lbl_Playlists.Size = new System.Drawing.Size(74, 20);
+            this.lbl_Playlists.TabIndex = 9;
+            this.lbl_Playlists.Text = "Playlists";
+            // 
+            // lbl_Musicas
+            // 
+            this.lbl_Musicas.AutoSize = true;
+            this.lbl_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Musicas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Musicas.Location = new System.Drawing.Point(4, 39);
+            this.lbl_Musicas.Name = "lbl_Musicas";
+            this.lbl_Musicas.Size = new System.Drawing.Size(74, 20);
+            this.lbl_Musicas.TabIndex = 8;
+            this.lbl_Musicas.Text = "Musicas";
+            // 
+            // lvw_Playlists
+            // 
+            this.lvw_Playlists.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvw_Playlists.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lvw_Playlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvw_Playlists.ForeColor = System.Drawing.SystemColors.Control;
+            this.lvw_Playlists.HideSelection = false;
+            this.lvw_Playlists.LargeImageList = this.img_LargePlaylist;
+            this.lvw_Playlists.Location = new System.Drawing.Point(7, 280);
+            this.lvw_Playlists.MaximumSize = new System.Drawing.Size(1750, 400);
+            this.lvw_Playlists.MultiSelect = false;
+            this.lvw_Playlists.Name = "lvw_Playlists";
+            this.lvw_Playlists.Size = new System.Drawing.Size(736, 191);
+            this.lvw_Playlists.TabIndex = 1;
+            this.lvw_Playlists.UseCompatibleStateImageBehavior = false;
+            this.lvw_Playlists.DoubleClick += new System.EventHandler(this.lvw_Playlists_DoubleClick);
+            // 
+            // lvw_Musicas
+            // 
+            this.lvw_Musicas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvw_Musicas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lvw_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvw_Musicas.ForeColor = System.Drawing.SystemColors.Control;
+            this.lvw_Musicas.HideSelection = false;
+            this.lvw_Musicas.LargeImageList = this.img_LargePlaylist;
+            this.lvw_Musicas.Location = new System.Drawing.Point(7, 62);
+            this.lvw_Musicas.MaximumSize = new System.Drawing.Size(1750, 400);
+            this.lvw_Musicas.MultiSelect = false;
+            this.lvw_Musicas.Name = "lvw_Musicas";
+            this.lvw_Musicas.Size = new System.Drawing.Size(736, 191);
+            this.lvw_Musicas.TabIndex = 0;
+            this.lvw_Musicas.UseCompatibleStateImageBehavior = false;
+            this.lvw_Musicas.DoubleClick += new System.EventHandler(this.lvw_Musicas_DoubleClick);
             // 
             // lbl_Search
             // 
@@ -160,7 +222,7 @@
             // pbx_Logo
             // 
             this.pbx_Logo.Image = global::SpotifyGestor.Properties.Resources.LogoText;
-            this.pbx_Logo.Location = new System.Drawing.Point(19, 27);
+            this.pbx_Logo.Location = new System.Drawing.Point(12, 12);
             this.pbx_Logo.Name = "pbx_Logo";
             this.pbx_Logo.Size = new System.Drawing.Size(121, 50);
             this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -223,54 +285,6 @@
             this.mni_TerminarSessao.Text = "Terminar Sessão";
             this.mni_TerminarSessao.Click += new System.EventHandler(this.mni_TerminarSessao_Click);
             // 
-            // lvw_Musicas
-            // 
-            this.lvw_Musicas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lvw_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvw_Musicas.ForeColor = System.Drawing.SystemColors.Control;
-            this.lvw_Musicas.HideSelection = false;
-            this.lvw_Musicas.LargeImageList = this.img_LargePlaylist;
-            this.lvw_Musicas.Location = new System.Drawing.Point(5, 39);
-            this.lvw_Musicas.Name = "lvw_Musicas";
-            this.lvw_Musicas.Size = new System.Drawing.Size(739, 191);
-            this.lvw_Musicas.TabIndex = 0;
-            this.lvw_Musicas.UseCompatibleStateImageBehavior = false;
-            // 
-            // lvw_Playlists
-            // 
-            this.lvw_Playlists.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lvw_Playlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvw_Playlists.ForeColor = System.Drawing.SystemColors.Control;
-            this.lvw_Playlists.HideSelection = false;
-            this.lvw_Playlists.LargeImageList = this.img_LargePlaylist;
-            this.lvw_Playlists.Location = new System.Drawing.Point(6, 280);
-            this.lvw_Playlists.Name = "lvw_Playlists";
-            this.lvw_Playlists.Size = new System.Drawing.Size(739, 191);
-            this.lvw_Playlists.TabIndex = 1;
-            this.lvw_Playlists.UseCompatibleStateImageBehavior = false;
-            // 
-            // lbl_Musicas
-            // 
-            this.lbl_Musicas.AutoSize = true;
-            this.lbl_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Musicas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Musicas.Location = new System.Drawing.Point(3, 16);
-            this.lbl_Musicas.Name = "lbl_Musicas";
-            this.lbl_Musicas.Size = new System.Drawing.Size(74, 20);
-            this.lbl_Musicas.TabIndex = 8;
-            this.lbl_Musicas.Text = "Musicas";
-            // 
-            // lbl_Playlists
-            // 
-            this.lbl_Playlists.AutoSize = true;
-            this.lbl_Playlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Playlists.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Playlists.Location = new System.Drawing.Point(3, 257);
-            this.lbl_Playlists.Name = "lbl_Playlists";
-            this.lbl_Playlists.Size = new System.Drawing.Size(74, 20);
-            this.lbl_Playlists.TabIndex = 9;
-            this.lbl_Playlists.Text = "Playlists";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -296,7 +310,9 @@
             this.Controls.Add(this.pnl_Home);
             this.Controls.Add(this.lbl_Search);
             this.Controls.Add(this.lbl_Inicio);
+            this.MinimumSize = new System.Drawing.Size(936, 620);
             this.Name = "Frm_Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Frm_Home_Load);
             this.pnl_Home.ResumeLayout(false);
