@@ -224,6 +224,13 @@ namespace SpotifyGestor
             lbl_LogOutGeral.Font = new Font(lbl_LogOutGeral.Font, FontStyle.Bold | FontStyle.Underline);
         }
 
+        private void lbl_CriarMusica_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            lbl_CriarMusica.Font = new Font(lbl_CriarMusica.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+
+
         #endregion
 
 
@@ -248,6 +255,12 @@ namespace SpotifyGestor
             lbl_LogOutGeral.Font = new Font(lbl_LogOutGeral.Font, FontStyle.Regular);
         }
 
+        private void lbl_CriarMusica_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            lbl_CriarMusica.Font = new Font(lbl_CriarMusica.Font, FontStyle.Regular);
+        }
+
 
         #endregion
 
@@ -258,8 +271,9 @@ namespace SpotifyGestor
         private void lbl_ListaContas_MouseClick(object sender, MouseEventArgs e)
         {
             pnl_ListaContas.Visible = true;
+            pnl_CriarMusica.Visible = false;
             pnl_CriarPlaylist.Visible = false;
-            pnl_logOut.Visible = false;
+            pnl_LogOut.Visible = false;
 
             
             FillListView();
@@ -268,8 +282,9 @@ namespace SpotifyGestor
         private void lbl_CriarPlaylist_MouseClick(object sender, MouseEventArgs e)
         {
             pnl_ListaContas.Visible = false;
+            pnl_CriarMusica.Visible = false;
             pnl_CriarPlaylist.Visible = true;
-            pnl_logOut.Visible = false;
+            pnl_LogOut.Visible = false;
 
 
             FillComboBox();
@@ -278,8 +293,17 @@ namespace SpotifyGestor
         private void lbl_LogOutGeral_MouseClick(object sender, MouseEventArgs e)
         {
             pnl_ListaContas.Visible = false;
+            pnl_CriarMusica.Visible = false;
             pnl_CriarPlaylist.Visible = false;
-            pnl_logOut.Visible = true;
+            pnl_LogOut.Visible = true;
+        }
+
+        private void lbl_CriarMusica_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnl_ListaContas.Visible = false;
+            pnl_CriarMusica.Visible = true;
+            pnl_CriarPlaylist.Visible = false;
+            pnl_LogOut.Visible = false;
         }
 
 
@@ -356,5 +380,11 @@ namespace SpotifyGestor
                 lvw1_Contas.Items.Add(item);
             }
         }
+
+        
+
+        
+
+        
     }
 }
