@@ -49,6 +49,8 @@ namespace SpotifyGestor
                 cbb_Musicas.Items.Add(musica.NomeMusica);
             }
         }
+
+
         #endregion
 
 
@@ -61,14 +63,15 @@ namespace SpotifyGestor
             LoggedUser = User;
         }
 
+
         #endregion
 
 
 
+        #region Eventos
+    
 
-        }
-
-        private void lbl_CriarPlaylist_Click(object sender, EventArgs e)
+    private void lbl_CriarPlaylist_Click(object sender, EventArgs e)
         {
             pnl_CriarPlaylist.Visible = true;
             pnl_ListaContas.Visible = false;
@@ -104,7 +107,7 @@ namespace SpotifyGestor
         private void btn_CriarConta_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var form2 = new Frm_CriarConta();
+            var form2 = new Frm_CriarConta(LoggedUser);
             form2.Closed += (s, args) => this.Close();
             form2.Show();
         }
@@ -287,6 +290,5 @@ namespace SpotifyGestor
 
         #endregion
 
-        
     }
 }
