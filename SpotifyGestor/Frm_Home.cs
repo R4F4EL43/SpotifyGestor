@@ -37,7 +37,25 @@ namespace SpotifyGestor
 
         #region Metodos Próprios
 
-
+        public void FillListView(List<Musica> musicas)
+        {
+            lvw_Musicas.Items.Clear();
+            foreach (Musica musica in Variaveis.Musicas)
+            {
+                ListViewItem item = new ListViewItem();
+                item.ImageIndex = 0;
+                item.Text = musica.NomeMusica;
+                lvw_Musicas.Items.Add(item);
+            }
+            foreach (Playlist playlist in Variaveis.Playlist)
+            {
+                ListViewItem item = new ListViewItem();
+                item.ImageIndex = 1;
+                item.Text = playlist.Nome;
+                lvw_Playlists.Items.Add(item);
+            }
+        }
+        
 
 
         #endregion
@@ -51,8 +69,7 @@ namespace SpotifyGestor
         private void Frm_Home_Load(object sender, EventArgs e)
         {
             pnl_Home.Visible = true;
-            pnl_Search.Visible = false;
-
+            FillListView(Variaveis.Musicas);
             if (LoggedUser.Playlists.Count != 0)
             {
                 foreach(Playlist a in LoggedUser.Playlists)
@@ -148,16 +165,15 @@ namespace SpotifyGestor
 
         private void lbl_Inicio_MouseClick(object sender, MouseEventArgs e)
         {
-            pnl_Home.Visible = false;
-            pnl_Search.Visible = false;
+            pnl_Home.Visible = true;
+            FillListView(Variaveis.Musicas);
         }
 
         private void lbl_Search_MouseClick(object sender, MouseEventArgs e)
         {
             pnl_Home.Visible = false;
-            pnl_Search.Visible = false;
         }
-
+        
 
         #endregion
 
@@ -261,10 +277,12 @@ namespace SpotifyGestor
 
 
 
+
         #endregion
 
 
         #endregion
+
         
     }
 }

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Home));
-            this.pnl_Search = new System.Windows.Forms.Panel();
             this.lvw_Library = new System.Windows.Forms.ListView();
             this.ch_Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.img_LargePlaylist = new System.Windows.Forms.ImageList(this.components);
@@ -48,18 +47,16 @@
             this.mni_Definicoes = new System.Windows.Forms.ToolStripMenuItem();
             this.mni_Separador = new System.Windows.Forms.ToolStripSeparator();
             this.mni_TerminarSessao = new System.Windows.Forms.ToolStripMenuItem();
+            this.lvw_Musicas = new System.Windows.Forms.ListView();
+            this.lvw_Playlists = new System.Windows.Forms.ListView();
+            this.lbl_Musicas = new System.Windows.Forms.Label();
+            this.lbl_Playlists = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnl_Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_ProfileIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).BeginInit();
             this.mns_Profile.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnl_Search
-            // 
-            this.pnl_Search.Location = new System.Drawing.Point(159, 79);
-            this.pnl_Search.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Search.Name = "pnl_Search";
-            this.pnl_Search.Size = new System.Drawing.Size(745, 472);
-            this.pnl_Search.TabIndex = 25;
             // 
             // lvw_Library
             // 
@@ -86,7 +83,8 @@
             // 
             this.img_LargePlaylist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_LargePlaylist.ImageStream")));
             this.img_LargePlaylist.TransparentColor = System.Drawing.Color.Transparent;
-            this.img_LargePlaylist.Images.SetKeyName(0, "Steve-Zondicons-Playlist.32.png");
+            this.img_LargePlaylist.Images.SetKeyName(0, "nota-musical.png");
+            this.img_LargePlaylist.Images.SetKeyName(1, "album-de-musica.png");
             // 
             // img_SmallPlaylist
             // 
@@ -108,6 +106,10 @@
             // 
             // pnl_Home
             // 
+            this.pnl_Home.Controls.Add(this.lbl_Playlists);
+            this.pnl_Home.Controls.Add(this.lbl_Musicas);
+            this.pnl_Home.Controls.Add(this.lvw_Playlists);
+            this.pnl_Home.Controls.Add(this.lvw_Musicas);
             this.pnl_Home.Location = new System.Drawing.Point(159, 79);
             this.pnl_Home.Name = "pnl_Home";
             this.pnl_Home.Size = new System.Drawing.Size(747, 474);
@@ -221,15 +223,74 @@
             this.mni_TerminarSessao.Text = "Terminar Sessão";
             this.mni_TerminarSessao.Click += new System.EventHandler(this.mni_TerminarSessao_Click);
             // 
+            // lvw_Musicas
+            // 
+            this.lvw_Musicas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lvw_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvw_Musicas.ForeColor = System.Drawing.SystemColors.Control;
+            this.lvw_Musicas.HideSelection = false;
+            this.lvw_Musicas.LargeImageList = this.img_LargePlaylist;
+            this.lvw_Musicas.Location = new System.Drawing.Point(5, 39);
+            this.lvw_Musicas.Name = "lvw_Musicas";
+            this.lvw_Musicas.Size = new System.Drawing.Size(739, 191);
+            this.lvw_Musicas.TabIndex = 0;
+            this.lvw_Musicas.UseCompatibleStateImageBehavior = false;
+            // 
+            // lvw_Playlists
+            // 
+            this.lvw_Playlists.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lvw_Playlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvw_Playlists.ForeColor = System.Drawing.SystemColors.Control;
+            this.lvw_Playlists.HideSelection = false;
+            this.lvw_Playlists.LargeImageList = this.img_LargePlaylist;
+            this.lvw_Playlists.Location = new System.Drawing.Point(6, 280);
+            this.lvw_Playlists.Name = "lvw_Playlists";
+            this.lvw_Playlists.Size = new System.Drawing.Size(739, 191);
+            this.lvw_Playlists.TabIndex = 1;
+            this.lvw_Playlists.UseCompatibleStateImageBehavior = false;
+            // 
+            // lbl_Musicas
+            // 
+            this.lbl_Musicas.AutoSize = true;
+            this.lbl_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Musicas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Musicas.Location = new System.Drawing.Point(3, 16);
+            this.lbl_Musicas.Name = "lbl_Musicas";
+            this.lbl_Musicas.Size = new System.Drawing.Size(74, 20);
+            this.lbl_Musicas.TabIndex = 8;
+            this.lbl_Musicas.Text = "Musicas";
+            // 
+            // lbl_Playlists
+            // 
+            this.lbl_Playlists.AutoSize = true;
+            this.lbl_Playlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Playlists.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Playlists.Location = new System.Drawing.Point(3, 257);
+            this.lbl_Playlists.Name = "lbl_Playlists";
+            this.lbl_Playlists.Size = new System.Drawing.Size(74, 20);
+            this.lbl_Playlists.TabIndex = 9;
+            this.lbl_Playlists.Text = "Playlists";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(181, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(407, 37);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Form Para abrir Rafael!!!!!!!";
+            // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(920, 581);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pcb_ProfileIcon);
             this.Controls.Add(this.pbx_Logo);
-            this.Controls.Add(this.pnl_Search);
             this.Controls.Add(this.lvw_Library);
             this.Controls.Add(this.txt_Library);
             this.Controls.Add(this.pnl_Home);
@@ -238,6 +299,8 @@
             this.Name = "Frm_Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Frm_Home_Load);
+            this.pnl_Home.ResumeLayout(false);
+            this.pnl_Home.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_ProfileIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).EndInit();
             this.mns_Profile.ResumeLayout(false);
@@ -249,7 +312,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbx_Logo;
-        private System.Windows.Forms.Panel pnl_Search;
         private System.Windows.Forms.ListView lvw_Library;
         private System.Windows.Forms.TextBox txt_Library;
         private System.Windows.Forms.Panel pnl_Home;
@@ -266,5 +328,10 @@
         private System.Windows.Forms.ToolStripMenuItem mni_Definicoes;
         private System.Windows.Forms.ToolStripSeparator mni_Separador;
         private System.Windows.Forms.ToolStripMenuItem mni_TerminarSessao;
+        private System.Windows.Forms.ListView lvw_Musicas;
+        private System.Windows.Forms.ListView lvw_Playlists;
+        private System.Windows.Forms.Label lbl_Playlists;
+        private System.Windows.Forms.Label lbl_Musicas;
+        private System.Windows.Forms.Label label1;
     }
 }
