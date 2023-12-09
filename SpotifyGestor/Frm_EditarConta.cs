@@ -65,7 +65,7 @@ namespace SpotifyGestor
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var form2 = new Frm_Admin();
+            var form2 = new Frm_Admin(LoggedUser);
             form2.Closed += (s, args) => this.Close();
             form2.Show();
         }
@@ -93,7 +93,7 @@ namespace SpotifyGestor
                 Variaveis.Contas.FirstOrDefault(s => s.IdConta == LoggedUser.IdConta).IsAdmin = chb_IsAdmin.Checked;
 
                 this.Hide();
-                var form2 = new Frm_Admin();
+                var form2 = new Frm_Admin(LoggedUser);
                 form2.Closed += (s, args) => this.Close();
                 form2.Show();
             }
