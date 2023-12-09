@@ -70,20 +70,70 @@ namespace SpotifyGestor
                 else
                 {
                     //Criar a conta
-                    Conta conta1 = new Conta(txt_Nome.Text, txt_Email.Text, txt_Senha.Text, chb_IsAdmin.Checked);                    
-                    Variaveis.Contas.Add(conta1);
-                    MessageBox.Show("Conta creada com sucesso.");
+                    Conta conta1 = new Conta(txt_Nome.Text, txt_Email.Text, txt_Senha.Text, chb_IsAdmin.Checked);
+                    if (chb_IsArtista.Checked == false)
+                    {
+                        
+                        Variaveis.Contas.Add(conta1);
+                        MessageBox.Show("Conta creada com sucesso.");
+                        this.Hide();
+                        var form2 = new Frm_Admin(LoggedUser);
+                        form2.Closed += (s, args) => this.Close();
+                        form2.Show();
+                    }
+                    else
+                    {
+                        if (txt_Artista.Text.Trim() == string.Empty)
+                        {
+                            erp_Artista.SetError(txt_Artista, "Preencha o campo.");
+                        }
+                        else
+                        {
+                            Variaveis.Contas.Add(conta1);
+
+                            Artista artista = new Artista(txt_Artista.Text, true, conta1);
+                            Variaveis.Artistas.Add(artista);
+                            
+                            MessageBox.Show("Conta creada com sucesso.");
+
+
+                            this.Hide();
+                            var form2 = new Frm_Admin(LoggedUser);
+                            form2.Closed += (s, args) => this.Close();
+                            form2.Show();
+                        }
+                    }
                 }
                 
-                this.Hide();
-                var form2 = new Frm_Admin(LoggedUser);
-                form2.Closed += (s, args) => this.Close();
-                form2.Show();
+                
             }
         }
 
 
         #endregion
 
+        #region TextChanged
+
+        private void txt_Artista_TextChanged(object sender, EventArgs e)
+        {
+            erp_Artista.Clear();
+        }
+
+        private void txt_Nome_TextChanged(object sender, EventArgs e)
+        {
+            erp_Nome.Clear();
+        }
+
+        private void txt_Email_TextChanged(object sender, EventArgs e)
+        {
+            erp_Email.Clear();
+        }
+
+        private void txt_Senha_TextChanged(object sender, EventArgs e)
+        {
+            erp_Senha.Clear();
+        }
+
+        #endregion
     }
 }
