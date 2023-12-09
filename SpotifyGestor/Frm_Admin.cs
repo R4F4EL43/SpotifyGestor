@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace SpotifyGestor
 
         public void FillListView()
         {
-            lvw_Contas.Items.Clear();
+            lvw1_Contas.Items.Clear();
             foreach (Conta conta in Variaveis.Contas)
             {
                 ListViewItem item = new ListViewItem();
@@ -37,7 +38,7 @@ namespace SpotifyGestor
                 item.SubItems.Add(conta.Password);
                 item.SubItems.Add(conta.IsAdmin.ToString());
 
-                lvw_Contas.Items.Add(item);
+                lvw1_Contas.Items.Add(item);
             }
         }
 
@@ -70,17 +71,108 @@ namespace SpotifyGestor
 
         #region Eventos
 
+        #region Button
 
-    private void lbl_CriarPlaylist_Click(object sender, EventArgs e)
+        private void btn_CriarConta_Click(object sender, EventArgs e)
         {
-            pnl_CriarPlaylist.Visible = true;
-            pnl_ListaContas.Visible = false;
-            pnl_logOut.Visible = false;
-
-            FillComboBox();
+            this.Hide();
+            var form2 = new Frm_CriarConta(LoggedUser);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
         }
 
-        #region Clicks
+        private void btn_EditarConta_Click(object sender, EventArgs e)
+        {
+            if (lvw1_Contas.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione um item para poder editar.", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                //pegar a conta a passar para o form Editar
+                Conta conta = Variaveis.Contas.FirstOrDefault(s => s.Nome == lvw1_Contas.SelectedItems[0].Text);
+
+                this.Hide();
+                var form2 = new Frm_EditarConta(conta);
+                form2.Closed += (s, args) => this.Close();
+                form2.Show();
+            }
+        }
+
+        private void btn_EliminarConta_Click(object sender, EventArgs e)
+        {
+            if (lvw1_Contas.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione um item para poder eliminar.", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (MessageBox.Show($"Tem a certeza de que quer eliminar {lvw1_Contas.SelectedItems[0].Text}?", string.Empty, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    //Eliminar da List<Contas>
+                    Conta conta = Variaveis.Contas.FirstOrDefault(s => s.Nome == lvw1_Contas.SelectedItems[0].Text);
+                    Artista artista = Variaveis.Artistas.FirstOrDefault(s => s.Conta == conta);
+
+                    Variaveis.Contas.Remove(conta);
+
+                    if (artista != null)
+                        Variaveis.Artistas.Remove(artista);
+
+                    FillListView();
+                }
+            }
+        }
+
+        private void btn2_CriarMusica_Click(object sender, EventArgs e)
+        {
+            if (txt_NomePlaylist.Text.Trim().Length == 0)
+            {
+                erp2_Nome.SetError(txt_Texto, "Campo Obrigatório!");
+                return;
+            }
+            else
+                erp2_Nome.Clear();
+
+
+            if (cbb2_Artistas.SelectedIndex == -1)
+            {
+                erp2_Artista.SetError(cbb2_Artistas, "Campo Obrigatório!");
+                return;
+            }
+            else
+                erp2_Artista.Clear();
+
+
+            if (nud2_Minutos.Value == 0 || nud2_Segundos.Value == 0)
+            {
+                erp2_Duracao.SetError(nud2_Minutos, "Campo Obrigatório!");
+                erp2_Duracao.SetError(nud2_Segundos, "Campo Obrigatório!");
+                return;
+            }
+            else
+                erp2_Duracao.Clear();
+
+
+            if (txt2_Letra.Text.Trim().Length == 0)
+            {
+                erp2_Letra.SetError(txt2_Letra, "Campo Obrigatório!");
+                return;
+            }
+            else
+                erp2_Letra.Clear();
+
+
+
+            if (Variaveis.Musicas.FirstOrDefault(s => s.NomeMusica == txt2_NomeMusica.Text) != null)
+            {
+                erp2_Nome.SetError(txt_Texto, "Já existe uma música com este nome");
+            }
+
+            Musica musica = new Musica(txt2_NomeMusica.Text, Convert.ToInt32((nud2_Minutos.Value * 60) + nud2_Segundos.Value), txt2_Letra.Text, Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == cbb2_Artistas.SelectedItem.ToString()));
+            Variaveis.Musicas.Add(musica);
+
+        }
+
 
         private void btn_TerminarSessão_Click(object sender, EventArgs e)
         {
@@ -104,55 +196,7 @@ namespace SpotifyGestor
             }
         }
 
-        private void btn_CriarConta_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var form2 = new Frm_CriarConta(LoggedUser);
-            form2.Closed += (s, args) => this.Close();
-            form2.Show();
-        }
-
-        private void btn_EditarConta_Click(object sender, EventArgs e)
-        {
-            if (lvw_Contas.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Selecione um item para poder editar.", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                //pegar a conta a passar para o form Editar
-                Conta conta = Variaveis.Contas.FirstOrDefault(s => s.Nome == lvw_Contas.SelectedItems[0].Text);
-
-                this.Hide();
-                var form2 = new Frm_EditarConta(conta);
-                form2.Closed += (s, args) => this.Close();
-                form2.Show();
-            }
-        }
-
-        private void btn_EliminarConta_Click(object sender, EventArgs e)
-        {
-            if (lvw_Contas.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Selecione um item para poder eliminar.", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {                
-                if (MessageBox.Show($"Tem a certeza de que quer eliminar {lvw_Contas.SelectedItems[0].Text}?", string.Empty, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    //Eliminar da List<Contas>
-                    Conta conta = Variaveis.Contas.FirstOrDefault(s => s.Nome == lvw_Contas.SelectedItems[0].Text);
-                    Artista artista = Variaveis.Artistas.FirstOrDefault(s => s.Conta == conta);
-
-                    Variaveis.Contas.Remove(conta);
-
-                    if (artista != null)
-                        Variaveis.Artistas.Remove(artista);
-
-                    FillListView();
-                }
-            }
-        }
+        
 
         #endregion
 
@@ -217,22 +261,25 @@ namespace SpotifyGestor
             pnl_CriarPlaylist.Visible = false;
             pnl_logOut.Visible = false;
 
-            //Preencher ListView...            
+            
             FillListView();
         }
 
         private void lbl_CriarPlaylist_MouseClick(object sender, MouseEventArgs e)
         {
-            pnl_ListaContas.Visible = true;
-            pnl_CriarPlaylist.Visible = false;
+            pnl_ListaContas.Visible = false;
+            pnl_CriarPlaylist.Visible = true;
             pnl_logOut.Visible = false;
+
+
+            FillComboBox();
         }
 
         private void lbl_LogOutGeral_MouseClick(object sender, MouseEventArgs e)
         {
-            pnl_ListaContas.Visible = true;
+            pnl_ListaContas.Visible = false;
             pnl_CriarPlaylist.Visible = false;
-            pnl_logOut.Visible = false;
+            pnl_logOut.Visible = true;
         }
 
 
@@ -282,13 +329,32 @@ namespace SpotifyGestor
         }
 
 
-        #endregion
 
-
-        #endregion
 
 
         #endregion
 
+        #endregion
+
+        #endregion
+
+        private void chk1_User_CheckedChanged(object sender, EventArgs e)
+        {
+            lvw1_Contas.Items.Clear();
+            foreach (Conta a in Variaveis.Contas)
+            {
+                if (!chk1_User.Checked && Variaveis.Artistas.FirstOrDefault(s => s.Conta.Nome == a.Nome) != null)
+                    continue;
+
+                ListViewItem item = new ListViewItem();
+                item.Tag = a.IdConta;
+                item.Text = a.Nome;
+                item.SubItems.Add(a.Email);
+                item.SubItems.Add(a.Password);
+                item.SubItems.Add(a.IsAdmin.ToString());
+
+                lvw1_Contas.Items.Add(item);
+            }
+        }
     }
 }
