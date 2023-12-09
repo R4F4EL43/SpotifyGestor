@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,9 +13,9 @@ namespace SpotifyGestor
 
         #region Construtor
 
-        public Conta(int id, string nome, string email, string password, bool isAdmin)
+        public Conta(string nome, string email, string password, bool isAdmin)
         {
-            this.IdConta = id;
+            SetID();
             this.Nome = nome;
             this.Email = email; 
             this.Password = password;
@@ -49,10 +50,6 @@ namespace SpotifyGestor
 
         public int IdConta
         {
-            set
-            {
-                this._idConta = value;
-            }
             get
             {
                 return this._idConta;
@@ -64,7 +61,7 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Nome de Conta","Nome de Conta Inválido : " + value + " é null");
                 else this._nome = value;
             }
             get
@@ -78,7 +75,7 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Email de Conta", "Email de Conta Inválido : " + value + " é null");
                 else this._email = value;
             }
             get
@@ -92,7 +89,7 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Password de Conta", "Password de Conta Inválido : " + value + " é null");
                 else this._password = value;
             }
             get
@@ -130,7 +127,7 @@ namespace SpotifyGestor
             set
             {
                 if (value > DateTime.Now)
-                    throw new ArgumentOutOfRangeException("value");
+                    throw new ArgumentOutOfRangeException("Valor Inválido para Data de Nascimento de Conta", "Data de Nascimento de Conta Inválido : " + value);
                 else this._dataNasc = value;
             }
             get
@@ -172,6 +169,11 @@ namespace SpotifyGestor
             return true;
         }
 
+        private void SetID()
+        {
+            this._idConta = Variaveis.Contas.Count;
+        }
+
 
         #endregion
 
@@ -183,9 +185,9 @@ namespace SpotifyGestor
 
         #region Construtor
 
-        public Artista(int idartista, string nomeArtistico, bool verificado, Conta conta)
+        public Artista(string nomeArtistico, bool verificado, Conta conta)
         {
-            IdArtista = idartista;
+            SetID();
             NomeArtistico = nomeArtistico;
             Verificado = verificado;
             Conta = conta;
@@ -217,12 +219,6 @@ namespace SpotifyGestor
 
         public int IdArtista
         {
-            set
-            {
-                if (value == null)
-                    throw new ArgumentNullException("value");
-                else this._idArtista = value;
-            }
             get
             {
                 return this._idArtista;
@@ -234,7 +230,7 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Nome Artistico de Artista", "Nome Artistico de Artista Inválido : " + value + " é null");
                 else this._nomeArtistico = value;
             }
             get
@@ -260,8 +256,9 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
-                else this._conta = value;
+                    throw new ArgumentNullException("Valor Inválido para Conta de Artista", "Conta de Artista Inválido : " + value + " é null");
+                else 
+                    this._conta = value;
             }
             get
             {
@@ -328,6 +325,11 @@ namespace SpotifyGestor
             return true;
         }
 
+        private void SetID()
+        {
+            this._idArtista = Variaveis.Artistas.Count;
+        }
+
 
         #endregion
 
@@ -340,9 +342,9 @@ namespace SpotifyGestor
 
         #region Construtor
 
-        public Musica(int idMusica, string nomeMusica, int duracao, string letra, Artista artista)
+        public Musica(string nomeMusica, int duracao, string letra, Artista artista)
         {
-            this.IdMusica = idMusica;
+            SetID();
             this.NomeMusica = nomeMusica;
             this.Duracao = duracao;
             this.Letra = letra;
@@ -371,10 +373,6 @@ namespace SpotifyGestor
 
         public int IdMusica
         {
-            set
-            {
-                this._idMusica = value;
-            }
             get
             {
                 return this._idMusica;
@@ -386,7 +384,7 @@ namespace SpotifyGestor
             set
             {
                 if(value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Nome de Musica", "Nome de Musica Inválido : " + value + " é null");
                 else
                     this._nomeMusica = value;
             }
@@ -401,7 +399,7 @@ namespace SpotifyGestor
             set
             {
                 if (value <= 0)
-                    throw new ArgumentOutOfRangeException("value");
+                    throw new ArgumentOutOfRangeException("Valor Inválido para Duração de Musica", "Duração de Musica Inválido : " + value + " deve ser positivo");
                 else
                     this._duracao = value;
             }
@@ -416,7 +414,7 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Letra de Musica", "Letra de Musica Inválido : " + value + " é null");
                 else
                     this._letra = value;
             }
@@ -431,7 +429,7 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Artista de Musica", "Artista de Musica Inválido : " + value + " é null");
                 else
                     this._artista = value;
             }
@@ -444,6 +442,19 @@ namespace SpotifyGestor
 
         #endregion
 
+
+
+        #region Metodos
+
+        private void SetID()
+        {
+            this._idMusica = Variaveis.Musicas.Count;
+        }
+
+
+        #endregion
+
+
     }
 
 
@@ -451,14 +462,14 @@ namespace SpotifyGestor
     {
         #region Construtor
 
-        public Album(int idAlbum, string nome, int duracao, string descricao, Artista artista)
+        public Album(string nome, Artista artista)
         {
-            IdAlbum = idAlbum;
-            Nome = nome;
-            Duracao = duracao;
-            Descricao = descricao;
-            Artista = artista;
-            _musicas = new List<Musica>();
+            this.SetID();
+            this.Nome = nome;
+            this._duracao = 0;
+            this._descricao = "";
+            this.Artista = artista;
+            this._musicas = new List<Musica>();
         }
 
 
@@ -483,10 +494,6 @@ namespace SpotifyGestor
         #region Propiedades
 
         public int IdAlbum {
-            set
-            {
-                this._idAlbum = value;
-            }
             get
             {
                 return this._idAlbum;
@@ -497,7 +504,7 @@ namespace SpotifyGestor
             set
             {
                 if(value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Nome de Album", "Nome de Album Inválido : " + value + " é null");
                 else this._nome = value;
             }
             get
@@ -510,7 +517,7 @@ namespace SpotifyGestor
             set
             {
                 if (value <= 0)
-                    throw new ArgumentOutOfRangeException("value");
+                    throw new ArgumentOutOfRangeException("Valor Inválido para Duração de Album", "Duração de Album Inválido : " + value + " deve ser positivo");
                 else this._duracao = value;
             }
             get
@@ -523,7 +530,7 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Descricao de Album", "Descricao de Album Inválido : " + value + " é null"); 
                 else this._descricao = value;
             }
             get
@@ -536,7 +543,7 @@ namespace SpotifyGestor
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Artista de Album", "Artista de Album Inválido : " + value + " é null");
                 else this._artista = value;
             }
             get
@@ -577,6 +584,23 @@ namespace SpotifyGestor
             return true;
         }
 
+        public void SetDuracao()
+        {
+            this._duracao = 0;
+            if (this.Musicas.Count == 0)
+                return;
+
+            foreach (Musica a in this.Musicas)
+            {
+                _duracao += a.Duracao;
+            }
+        }        
+
+        private void SetID()
+        {
+            this._idAlbum = Variaveis.Albums.Count;
+        }
+
 
         #endregion
 
@@ -589,11 +613,11 @@ namespace SpotifyGestor
 
         #region Construtor
 
-        public Playlist(int id, string nome)
+        public Playlist(string nome)
         {
-            this.IdPlaylist = id;
+            SetID();
             this.Nome = nome;
-            this.Duracao = 0;
+            this._duracao = 0;
             this._musicas = new List<Musica>();
         }
 
@@ -618,10 +642,6 @@ namespace SpotifyGestor
 
         public int IdPlaylist
         {
-            set
-            {
-                this._idPlaylist = value;
-            }
             get
             {
                 return this._idPlaylist;
@@ -633,7 +653,7 @@ namespace SpotifyGestor
             set
             {
                 if(value == null)
-                    throw new ArgumentNullException("value");
+                    throw new ArgumentNullException("Valor Inválido para Nome de Playlist", "Nome de Playlist Inválido : " + value + " é null");
                 else
                     this._nome = value;
             }
@@ -645,13 +665,6 @@ namespace SpotifyGestor
 
         public int Duracao
         {
-            set
-            {
-                if (value <= 0)
-                    throw new ArgumentOutOfRangeException("value");
-                else
-                    this._duracao = value;
-            }
             get
             {
                 return this._duracao;
@@ -691,7 +704,7 @@ namespace SpotifyGestor
             return true;
         }
 
-        private void SetDuracao()
+        public void SetDuracao()
         {
             int tempo = 0;
             foreach(Musica a in _musicas)
@@ -699,6 +712,11 @@ namespace SpotifyGestor
                 tempo = a.Duracao;
             }
             this._duracao = tempo;
+        }
+
+        private void SetID()
+        {
+            this._idPlaylist = Variaveis.Albums.Count;
         }
 
 
