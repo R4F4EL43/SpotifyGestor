@@ -385,8 +385,54 @@ namespace SpotifyGestor
         }
 
 
+
         #endregion
 
+
+
+        #region PictureBox
+
+        #region PictureBox:Hover
+
+        private void pbx_Logo_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            pbx_Logo.Size = new Size(123, 52);
+        }
+
+
+        #endregion
+
+
+
+        #region PictureBox:Leave
+
+        private void pbx_Logo_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            pbx_Logo.Size = new Size(121, 50);
+        }
+
+
+        #endregion
+
+
+
+        #region PictureBox:Click
+
+        private void pbx_Logo_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Hide();
+            var form2 = new Frm_Home(LoggedUser);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
+
+
+        #endregion
+
+
+        #endregion
 
         #endregion
 

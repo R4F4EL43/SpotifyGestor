@@ -64,7 +64,7 @@
             this.lbl_Signup.AutoSize = true;
             this.lbl_Signup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Signup.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbl_Signup.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_Signup.Location = new System.Drawing.Point(343, 410);
             this.lbl_Signup.Name = "lbl_Signup";
             this.lbl_Signup.Size = new System.Drawing.Size(135, 16);

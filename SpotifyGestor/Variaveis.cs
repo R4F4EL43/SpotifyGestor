@@ -10,8 +10,6 @@ namespace SpotifyGestor
     public static class Variaveis
     {
 
-        //FALTA APLICAR AMBAS AS REGEX'S    --------------------------------------------------------------
-
         public static Regex Email = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$");
         /*
         Começar por Letras (min ou maiu) ou Digitos ou pelos caracteres ('._%+-')
@@ -22,7 +20,7 @@ namespace SpotifyGestor
 
 
 
-        public static Regex Password = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+        public static Regex Password = new Regex(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
         /*
         Pelo menos 8 caracteres                 {8,}
         Tem pelo menos 1 letra maiuscula        (?=.*?[A-Z])
@@ -31,7 +29,22 @@ namespace SpotifyGestor
         Tem pelo menos 1 caracter especial      (?=.*?[#?!@$%^&*-])
         */
 
-        //------------------------------------------------------------------------------------------------
+
+
+        public static Regex User = new Regex(@"[A-Za-z0-9]{8,}$");
+        /*
+        Pelo menos 8 caracteres                 {8,}
+        Pode ter digitos                        0-9
+        Pode ter letras maiusculas              A-Z
+        Pode ter letras minusculas              a-z
+        */
+
+
+
+        public static void WriteJSON()
+        {
+
+        }
 
 
         public static List<Conta> Contas = new List<Conta>()

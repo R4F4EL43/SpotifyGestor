@@ -59,8 +59,10 @@ namespace SpotifyGestor
             {
                 lvw_PlayLists.Items.Add(a.Nome);
             }
+            lbl_ProfileName.Text = LoggedUser.Nome;
+
             lbl_Playlists.Text = LoggedUser.Playlists.Count.ToString() + " playlists";
-            if (LoggedUser.Playlists.Count == 0)
+            if (LoggedUser.Playlists.Count == 1)
                 lbl_Playlists.Text = lbl_Playlists.Text.Remove(lbl_Playlists.Text.Length - 1,1);
             
         }
@@ -78,10 +80,59 @@ namespace SpotifyGestor
         }
 
 
-        #endregion
+
 
         #endregion
 
-        
+
+
+        #region Context Menu Strip
+
+        private void mni_Conta_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form2 = new Frm_Account(LoggedUser);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
+
+        private void mni_Profile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form2 = new Frm_Profile(LoggedUser);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
+
+        private void mni_Premium_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Agradecemos pela compra do Spotifly Premium, será cobrado 99.99€ por mês mais cobranças adicionais.", "Transação Spotifly Premium", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            LoggedUser.IsPremium = true;
+        }
+
+        private void mni_Definições_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form2 = new Frm_Settings(LoggedUser);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
+
+        private void mni_logOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form2 = new Frm_Login();
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
+
+
+        #endregion
+
+
+        #endregion
+
+
+
     }
 }
