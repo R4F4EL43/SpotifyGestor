@@ -69,7 +69,7 @@ namespace SpotifyGestor
 
 
         #region Eventos
-    
+
 
     private void lbl_CriarPlaylist_Click(object sender, EventArgs e)
         {
