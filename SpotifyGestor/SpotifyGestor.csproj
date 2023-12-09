@@ -176,5 +176,10 @@
   <ItemGroup>
     <None Include="Resources\User Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\album-de-musica.png" />
+    <Content Include="Resources\nota-musical.png" />
+    <Content Include="Resources\teste-playlist.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

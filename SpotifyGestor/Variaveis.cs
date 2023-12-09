@@ -66,9 +66,17 @@ namespace SpotifyGestor
         public static List<Musica> Musicas = new List<Musica>()
         {
             new Musica(0, "Kenny G", 190, "Quer viver a minha vida? Faz cem mil sem esforço\r\nAhn, se eu quiser ela deixa eu pôr no osso\r\nSe meu som é uma droga, geral quer sentir o gosto", Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == "Matuê")),
-            new Musica(1, "PayPal", 165, "Quem é esse lebesquedo?\r\nQue eu não tô reconhecendo\r\nParecendo um flaiecstchuflaiol\r\n(What is his name?)", Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == "Teto"))
+            new Musica(1, "PayPal", 165, "Quem é esse lebesquedo?\r\nQue eu não tô reconhecendo\r\nParecendo um flaiecstchuflaiol\r\n(What is his name?)", Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == "Teto")),
+            new Musica(3, "The Search", 200, "\"Hey, Nate, how's life?\"\r\nI don’t know, it's alright\r\nI've been dealin’ with some things like every human being\r\nAnd really didn't sleep much last night (Last night)\r\n\"I'm sorry,\" that's fine", Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == "Teto"))
         };
         public static List<Album> Albums = new List<Album>();
-        public static List<Playlist> Playlist = new List<Playlist>();
+        public static List<Playlist> Playlist = new List<Playlist>()
+        {
+            new Playlist("Cor D'água"),
+            new Playlist("A Great Chaos"),
+            new Playlist("?"),
+            new Playlist("Members Only"),
+            new Playlist("Utopia"),
+        };
     }
 }
