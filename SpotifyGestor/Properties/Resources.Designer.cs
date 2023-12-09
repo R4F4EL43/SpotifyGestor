@@ -63,6 +63,16 @@ namespace SpotifyGestor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap album_de_musica {
+            get {
+                object obj = ResourceManager.GetObject("album-de-musica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow {
             get {
                 object obj = ResourceManager.GetObject("arrow", resourceCulture);
@@ -86,6 +96,16 @@ namespace SpotifyGestor.Properties {
         internal static System.Drawing.Bitmap LogoText {
             get {
                 object obj = ResourceManager.GetObject("LogoText", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nota_musical {
+            get {
+                object obj = ResourceManager.GetObject("nota-musical", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

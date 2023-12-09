@@ -44,14 +44,14 @@ namespace SpotifyGestor
             foreach (Musica musica in Variaveis.Musicas)
             {
                 ListViewItem item = new ListViewItem();
-                item.ImageIndex = 0;
+                item.ImageIndex = 1;
                 item.Text = musica.NomeMusica;
                 lvw_Musicas.Items.Add(item);
             }
             foreach (Playlist playlist in Variaveis.Playlist)
             {
                 ListViewItem item = new ListViewItem();
-                item.ImageIndex = 1;
+                item.ImageIndex = 0;
                 item.Text = playlist.Nome;
                 lvw_Playlists.Items.Add(item);
             }
@@ -288,18 +288,25 @@ namespace SpotifyGestor
 
         private void lvw_Musicas_DoubleClick(object sender, EventArgs e)
         {
-            if (lvw_Musicas.CheckedItems.Count == 1)
-            {
+            if (lvw_Musicas.SelectedIndices[0] == -1)
+                return;
 
-            }
+            Musica musica = Variaveis.Musicas.FirstOrDefault(s => s.NomeMusica == lvw_Musicas.SelectedItems[0].Text);
+            var form2 = new Frm_PlaylistMusica(musica,null);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+
         }
 
         private void lvw_Playlists_DoubleClick(object sender, EventArgs e)
         {
-            if(lvw_Playlists.CheckedItems.Count == 1)
-            {
+            if (lvw_Playlists.SelectedIndices[0] == -1)
+                return;
 
-            }
+            Playlist playlist = Variaveis.Playlist.FirstOrDefault(s => s.Nome == lvw_Playlists.SelectedItems[0].Text);
+            var form2 = new Frm_PlaylistMusica(null, playlist);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
         }
 
 

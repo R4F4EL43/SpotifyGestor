@@ -69,7 +69,11 @@ namespace SpotifyGestor
 
         public static List<Conta> Contas = new List<Conta>()
         {
-            new Conta(0, "Rafael", "rafael@mail.com", "1234", true),
+            new Conta(0, "Rafael", "rafael@mail.com", "1234", true, new List<Playlist>()
+            {
+                
+                //Variaveis.Playlist.FirstOrDefault(s => s.Nome == "Cor D'água")
+            }),
             new Conta(1, "Gustavo", "gustavo@mail.com", "1234", true),
 
             new Conta(2, "Matheus Aguiar", "tuezinho@mail.com", "prima", false),
@@ -103,7 +107,11 @@ namespace SpotifyGestor
         public static List<Album> Albums = new List<Album>();
         public static List<Playlist> Playlist = new List<Playlist>()
         {
-            new Playlist("Cor D'água"),
+            new Playlist(0, "Cor D'água", new List<Musica>()
+            {
+                Variaveis.Musicas.FirstOrDefault(s => s.NomeMusica == "Kenny G"),
+                Variaveis.Musicas.FirstOrDefault(s => s.NomeMusica == "Conexões de Máfia")
+            }),
             new Playlist("A Great Chaos"),
             new Playlist("?"),
             new Playlist("Members Only"),

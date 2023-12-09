@@ -42,8 +42,6 @@
             this.lvw_Musicas = new System.Windows.Forms.ListView();
             this.lbl_Search = new System.Windows.Forms.Label();
             this.lbl_Inicio = new System.Windows.Forms.Label();
-            this.pcb_ProfileIcon = new System.Windows.Forms.PictureBox();
-            this.pbx_Logo = new System.Windows.Forms.PictureBox();
             this.mns_Profile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mni_Conta = new System.Windows.Forms.ToolStripMenuItem();
             this.mni_Perfil = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,11 +49,12 @@
             this.mni_Definicoes = new System.Windows.Forms.ToolStripMenuItem();
             this.mni_Separador = new System.Windows.Forms.ToolStripSeparator();
             this.mni_TerminarSessao = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pcb_ProfileIcon = new System.Windows.Forms.PictureBox();
+            this.pbx_Logo = new System.Windows.Forms.PictureBox();
             this.pnl_Home.SuspendLayout();
+            this.mns_Profile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_ProfileIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).BeginInit();
-            this.mns_Profile.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvw_Library
@@ -207,31 +206,6 @@
             this.lbl_Inicio.MouseLeave += new System.EventHandler(this.lbl_Inicio_MouseLeave);
             this.lbl_Inicio.MouseHover += new System.EventHandler(this.lbl_Inicio_MouseHover);
             // 
-            // pcb_ProfileIcon
-            // 
-            this.pcb_ProfileIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcb_ProfileIcon.Image = global::SpotifyGestor.Properties.Resources.User_Logo;
-            this.pcb_ProfileIcon.Location = new System.Drawing.Point(874, 27);
-            this.pcb_ProfileIcon.Name = "pcb_ProfileIcon";
-            this.pcb_ProfileIcon.Size = new System.Drawing.Size(30, 30);
-            this.pcb_ProfileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcb_ProfileIcon.TabIndex = 27;
-            this.pcb_ProfileIcon.TabStop = false;
-            this.pcb_ProfileIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pcb_ProfileIcon_MouseClick);
-            // 
-            // pbx_Logo
-            // 
-            this.pbx_Logo.Image = global::SpotifyGestor.Properties.Resources.LogoText;
-            this.pbx_Logo.Location = new System.Drawing.Point(12, 12);
-            this.pbx_Logo.Name = "pbx_Logo";
-            this.pbx_Logo.Size = new System.Drawing.Size(121, 50);
-            this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbx_Logo.TabIndex = 26;
-            this.pbx_Logo.TabStop = false;
-            this.pbx_Logo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbx_Logo_MouseClick);
-            this.pbx_Logo.MouseLeave += new System.EventHandler(this.pbx_Logo_MouseLeave);
-            this.pbx_Logo.MouseHover += new System.EventHandler(this.pbx_Logo_MouseHover);
-            // 
             // mns_Profile
             // 
             this.mns_Profile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -285,16 +259,30 @@
             this.mni_TerminarSessao.Text = "Terminar Sessão";
             this.mni_TerminarSessao.Click += new System.EventHandler(this.mni_TerminarSessao_Click);
             // 
-            // label1
+            // pcb_ProfileIcon
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(181, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(407, 37);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Form Para abrir Rafael!!!!!!!";
+            this.pcb_ProfileIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcb_ProfileIcon.Image = global::SpotifyGestor.Properties.Resources.User_Logo;
+            this.pcb_ProfileIcon.Location = new System.Drawing.Point(874, 27);
+            this.pcb_ProfileIcon.Name = "pcb_ProfileIcon";
+            this.pcb_ProfileIcon.Size = new System.Drawing.Size(30, 30);
+            this.pcb_ProfileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcb_ProfileIcon.TabIndex = 27;
+            this.pcb_ProfileIcon.TabStop = false;
+            this.pcb_ProfileIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pcb_ProfileIcon_MouseClick);
+            // 
+            // pbx_Logo
+            // 
+            this.pbx_Logo.Image = global::SpotifyGestor.Properties.Resources.LogoText;
+            this.pbx_Logo.Location = new System.Drawing.Point(12, 12);
+            this.pbx_Logo.Name = "pbx_Logo";
+            this.pbx_Logo.Size = new System.Drawing.Size(121, 50);
+            this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbx_Logo.TabIndex = 26;
+            this.pbx_Logo.TabStop = false;
+            this.pbx_Logo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbx_Logo_MouseClick);
+            this.pbx_Logo.MouseLeave += new System.EventHandler(this.pbx_Logo_MouseLeave);
+            this.pbx_Logo.MouseHover += new System.EventHandler(this.pbx_Logo_MouseHover);
             // 
             // Frm_Home
             // 
@@ -302,7 +290,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(920, 581);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pcb_ProfileIcon);
             this.Controls.Add(this.pbx_Logo);
             this.Controls.Add(this.lvw_Library);
@@ -317,9 +304,9 @@
             this.Load += new System.EventHandler(this.Frm_Home_Load);
             this.pnl_Home.ResumeLayout(false);
             this.pnl_Home.PerformLayout();
+            this.mns_Profile.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcb_ProfileIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).EndInit();
-            this.mns_Profile.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,6 +335,5 @@
         private System.Windows.Forms.ListView lvw_Playlists;
         private System.Windows.Forms.Label lbl_Playlists;
         private System.Windows.Forms.Label lbl_Musicas;
-        private System.Windows.Forms.Label label1;
     }
 }
