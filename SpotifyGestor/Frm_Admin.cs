@@ -44,10 +44,10 @@ namespace SpotifyGestor
 
         public void FillComboBox()
         {
-            cbb_Musicas.Items.Clear();
+            cbb3_Musicas.Items.Clear();
             foreach (Musica musica in Variaveis.Musicas)
             {
-                cbb_Musicas.Items.Add(musica.NomeMusica);
+                cbb3_Musicas.Items.Add(musica.NomeMusica);
             }
         }
 
@@ -173,6 +173,61 @@ namespace SpotifyGestor
 
         }
 
+        private void btn_CriarPlaylist_Click(object sender, EventArgs e)
+        {
+            if (txt_NomePlaylist.Text.Trim().Length == 0)
+            {
+                erp3_Nome.SetError(txt_NomePlaylist, "Preencha todos os campos!");
+                return;
+            }
+            else
+                erp2_Nome.Clear();
+            if (Variaveis.Playlist.FirstOrDefault(s => s.Nome == txt_NomePlaylist.Text) != null)
+            {
+                erp3_Nome.SetError(txt_NomePlaylist, "Playlist com esse nome já em uso");
+                return;
+            }
+            else
+                erp2_Nome.Clear();
+
+            Playlist playlist = new Playlist(txt_NomePlaylist.Text);
+            Variaveis.Playlist.Add(playlist);
+
+            pnl_AdicionarMusica.Visible = true;
+
+        }
+
+        private void btn3_Adicionar_Click(object sender, EventArgs e)
+        {
+            if (txt_NomePlaylist.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Ocorreu um erro ao selecionar a Playlist, tente novamente", "Admin : Adicionar Musicas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (cbb3_Musicas.SelectedIndex == -1)
+            {
+                erp3_Musica.SetError(cbb3_Musicas, "Campo Obrigatório!");
+                return;
+            }
+
+            Musica musica = Variaveis.Musicas.FirstOrDefault(s => s.NomeMusica == cbb3_Musicas.SelectedItem.ToString());
+            Variaveis.Playlist.FirstOrDefault(s => s.Nome == txt_NomePlaylist.Text).AddMusica(musica);
+
+            cbb3_Musicas.SelectedIndex = -1;
+        }
+
+        private void btn3_Terminar_Click(object sender, EventArgs e)
+        {
+            if (Variaveis.Playlist.FirstOrDefault(s => s.Nome == txt_NomePlaylist.Text).Musicas.Count == 0)
+            {
+                MessageBox.Show("Deve adicionar pelo menos uma música a Playlist", "Admin : Adicionar Musica", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            cbb3_Musicas.SelectedIndex = 1;
+            pnl_AdicionarMusica.Visible = false;
+            txt_NomePlaylist.Clear();
+        }
 
         private void btn_TerminarSessão_Click(object sender, EventArgs e)
         {
@@ -182,22 +237,7 @@ namespace SpotifyGestor
             form2.Show();
         }
 
-        private void btn_CriarPlaylist_Click(object sender, EventArgs e)
-        {            
-            if (txt_NomePlaylist.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Preencha todos os campos.");
-            }
-            else
-            {
-                Playlist playlist = new Playlist(txt_NomePlaylist.Text);
-                
-                Variaveis.Playlist.Add(playlist);
-            }
-        }
-
-        
-
+       
         #endregion
 
 
@@ -210,6 +250,12 @@ namespace SpotifyGestor
         {
             Cursor.Current = Cursors.Hand;
             lbl_ListaContas.Font = new Font(lbl_ListaContas.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+
+        private void lbl_CriarMusica_MouseHover(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+            lbl_CriarMusica.Font = new Font(lbl_CriarMusica.Font, FontStyle.Bold | FontStyle.Underline);
         }
 
         private void lbl_CriarPlaylist_MouseHover(object sender, EventArgs e)
@@ -236,6 +282,12 @@ namespace SpotifyGestor
             lbl_ListaContas.Font = new Font(lbl_ListaContas.Font, FontStyle.Regular);
         }
 
+        private void lbl_CriarMusica_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.Default;
+            lbl_CriarMusica.Font = new Font(lbl_CriarMusica.Font, FontStyle.Regular);
+        }
+
         private void lbl_CriarPlaylist_MouseLeave(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.Default;
@@ -258,6 +310,7 @@ namespace SpotifyGestor
         private void lbl_ListaContas_MouseClick(object sender, MouseEventArgs e)
         {
             pnl_ListaContas.Visible = true;
+            pnl_AdicionarMusica.Visible = false;
             pnl_CriarPlaylist.Visible = false;
             pnl_logOut.Visible = false;
 
@@ -265,9 +318,18 @@ namespace SpotifyGestor
             FillListView();
         }
 
+        private void lbl_CriarMusica_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnl_ListaContas.Visible = false;
+            pnl_AdicionarMusica.Visible=true;
+            pnl_CriarPlaylist.Visible = false;
+            pnl_logOut.Visible = false;
+        }
+
         private void lbl_CriarPlaylist_MouseClick(object sender, MouseEventArgs e)
         {
             pnl_ListaContas.Visible = false;
+            pnl_AdicionarMusica.Visible = false;
             pnl_CriarPlaylist.Visible = true;
             pnl_logOut.Visible = false;
 
@@ -278,6 +340,7 @@ namespace SpotifyGestor
         private void lbl_LogOutGeral_MouseClick(object sender, MouseEventArgs e)
         {
             pnl_ListaContas.Visible = false;
+            pnl_AdicionarMusica.Visible = false;
             pnl_CriarPlaylist.Visible = false;
             pnl_logOut.Visible = true;
         }
@@ -336,7 +399,28 @@ namespace SpotifyGestor
 
         #endregion
 
+
+
+        #region Painel
+
+        private void pnl_AdicionarMusica_VisibleChanged(object sender, EventArgs e)
+        {
+            if (!pnl_AdicionarMusica.Visible)
+                return;
+
+            cbb3_Musicas.Items.Clear();
+            foreach (Musica musica in Variaveis.Musicas)
+            {
+                cbb3_Musicas.Items.Add(musica.NomeMusica);
+            }
+        }
+
+
         #endregion
+
+
+
+        #region CheckBox
 
         private void chk1_User_CheckedChanged(object sender, EventArgs e)
         {
@@ -356,5 +440,16 @@ namespace SpotifyGestor
                 lvw1_Contas.Items.Add(item);
             }
         }
+
+
+
+
+
+
+        #endregion
+
+        #endregion
+
+        
     }
 }
