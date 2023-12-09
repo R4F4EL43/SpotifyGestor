@@ -66,7 +66,7 @@ namespace SpotifyGestor
 
 
 
-        }
+        #region Eventos
 
         private void lbl_CriarPlaylist_Click(object sender, EventArgs e)
         {
@@ -104,7 +104,7 @@ namespace SpotifyGestor
         private void btn_CriarConta_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var form2 = new Frm_CriarConta();
+            var form2 = new Frm_CriarConta(LoggedUser);
             form2.Closed += (s, args) => this.Close();
             form2.Show();
         }

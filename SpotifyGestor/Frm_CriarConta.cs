@@ -12,11 +12,22 @@ namespace SpotifyGestor
 {
     public partial class Frm_CriarConta : Form
     {
+
+        #region Variaevis
+
+        Conta LoggedUser = null;
+
+
+        #endregion
+
+
+
         #region Construtor 
 
-        public Frm_CriarConta()
+        public Frm_CriarConta(Conta User)
         {
             InitializeComponent();
+            this.LoggedUser = User;
         }
 
         #endregion
@@ -26,7 +37,7 @@ namespace SpotifyGestor
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var form2 = new Frm_Admin();
+            var form2 = new Frm_Admin(LoggedUser);
             form2.Closed += (s, args) => this.Close();
             form2.Show();
         }
@@ -62,7 +73,7 @@ namespace SpotifyGestor
                 }
                 
                 this.Hide();
-                var form2 = new Frm_Admin();
+                var form2 = new Frm_Admin(LoggedUser);
                 form2.Closed += (s, args) => this.Close();
                 form2.Show();
             }
