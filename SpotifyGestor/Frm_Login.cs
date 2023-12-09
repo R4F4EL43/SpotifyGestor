@@ -108,10 +108,21 @@ namespace SpotifyGestor
             {
                 lbl_Erro.Text = "";
 
-                this.Hide();
-                var form2 = new Frm_Home(user);
-                form2.Closed += (s, args) => this.Close();
-                form2.Show();
+                if (user.IsAdmin)
+                {
+                    this.Hide();
+                    var form2 = new Frm_Admin();
+                    form2.Closed += (s, args) => this.Close();
+                    form2.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    var form2 = new Frm_Home(user);
+                    form2.Closed += (s, args) => this.Close();
+                    form2.Show();
+                }
+                
 
                 
             }

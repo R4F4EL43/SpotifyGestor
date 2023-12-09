@@ -49,24 +49,24 @@ namespace SpotifyGestor
 
         public static List<Conta> Contas = new List<Conta>()
         {
-            new Conta("Rafael", "rafael@mail.com", "1234", true),
-            new Conta("Gustavo", "gustavo@mail.com", "1234", true),
+            new Conta(0, "Rafael", "rafael@mail.com", "1234", true),
+            new Conta(1, "Gustavo", "gustavo@mail.com", "1234", true),
 
-            new Conta("Matheus Aguiar", "tuezinho@mail.com", "prima", false),
-            new Conta("Clériton Silva", "teto@mail.com", "parafal", false),
-            new Conta("Vinicius Lima", "wiu@mail.com", "parafal", false)
+            new Conta(2, "Matheus Aguiar", "tuezinho@mail.com", "prima", false),
+            new Conta(3, "Clériton Silva", "teto@mail.com", "parafal", false),
+            new Conta(4, "Vinicius Lima", "wiu@mail.com", "parafal", false)
         };
         public static List<Artista> Artistas = new List<Artista>()
         {
-            new Artista("Matuê", true, Contas.FirstOrDefault(s => s.Nome == "Matheus Aguiar")),
-            new Artista("Teto", true, Contas.FirstOrDefault(s => s.Nome == "Clériton Silva")),
-            new Artista("WIU", true, Contas.FirstOrDefault(s => s.Nome == "Vinicius Lima"))
+            new Artista(0, "Matuê", true, Contas.FirstOrDefault(s => s.Nome == "Matheus Aguiar")),
+            new Artista(1, "Teto", true, Contas.FirstOrDefault(s => s.Nome == "Clériton Silva")),
+            new Artista(2, "WIU", true, Contas.FirstOrDefault(s => s.Nome == "Vinicius Lima"))
         };
 
         public static List<Musica> Musicas = new List<Musica>()
         {
-            new Musica("Kenny G", 190, "Quer viver a minha vida? Faz cem mil sem esforço\r\nAhn, se eu quiser ela deixa eu pôr no osso\r\nSe meu som é uma droga, geral quer sentir o gosto", Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == "Matuê")),
-            new Musica("PayPal", 165, "Quem é esse lebesquedo?\r\nQue eu não tô reconhecendo\r\nParecendo um flaiecstchuflaiol\r\n(What is his name?)", Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == "Teto"))
+            new Musica(0, "Kenny G", 190, "Quer viver a minha vida? Faz cem mil sem esforço\r\nAhn, se eu quiser ela deixa eu pôr no osso\r\nSe meu som é uma droga, geral quer sentir o gosto", Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == "Matuê")),
+            new Musica(1, "PayPal", 165, "Quem é esse lebesquedo?\r\nQue eu não tô reconhecendo\r\nParecendo um flaiecstchuflaiol\r\n(What is his name?)", Variaveis.Artistas.FirstOrDefault(s => s.NomeArtistico == "Teto"))
         };
         public static List<Album> Albums = new List<Album>();
         public static List<Playlist> Playlist = new List<Playlist>();

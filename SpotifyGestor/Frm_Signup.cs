@@ -223,7 +223,7 @@ namespace SpotifyGestor
                 erp_Email.Clear();
 
 
-            Conta conta = new Conta(Variaveis.Contas.Count, txt_User.Text, txt_Email.Text, txt_ConfirmSenha.Text, false);
+            Conta conta = new Conta(txt_User.Text, txt_Email.Text, txt_ConfirmSenha.Text, false);
             if (CheckUsers(conta) == false)
                 return;
 

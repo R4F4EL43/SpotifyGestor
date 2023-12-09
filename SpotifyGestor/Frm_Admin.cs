@@ -86,7 +86,7 @@ namespace SpotifyGestor
             }
             else
             {
-                Playlist playlist = new Playlist(Variaveis.Playlist.Count, txt_NomePlaylist.Text);
+                Playlist playlist = new Playlist(txt_NomePlaylist.Text);
                 
                 Variaveis.Playlist.Add(playlist);
             }
