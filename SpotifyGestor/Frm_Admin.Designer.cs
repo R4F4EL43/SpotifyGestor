@@ -494,6 +494,7 @@
             // txt2_Letra
             // 
             this.txt2_Letra.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txt2_Letra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt2_Letra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt2_Letra.Location = new System.Drawing.Point(29, 323);
             this.txt2_Letra.Multiline = true;
