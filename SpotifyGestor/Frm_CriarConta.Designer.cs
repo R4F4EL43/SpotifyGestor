@@ -193,7 +193,10 @@
             this.Controls.Add(this.lbl_Nome);
             this.Controls.Add(this.lbl_CriarConta);
             this.ForeColor = System.Drawing.SystemColors.Control;
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(450, 500);
             this.Name = "Frm_CriarConta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Criar Conta";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp_Nome)).EndInit();

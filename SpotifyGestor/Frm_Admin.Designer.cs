@@ -493,6 +493,9 @@
             // 
             // txt2_Letra
             // 
+            this.txt2_Letra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt2_Letra.BackColor = System.Drawing.SystemColors.MenuText;
             this.txt2_Letra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt2_Letra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -514,6 +517,7 @@
             // 
             // lb2l_Duracao
             // 
+            this.lb2l_Duracao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb2l_Duracao.AutoSize = true;
             this.lb2l_Duracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lb2l_Duracao.Location = new System.Drawing.Point(500, 202);
@@ -524,6 +528,7 @@
             // 
             // nud2_Segundos
             // 
+            this.nud2_Segundos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nud2_Segundos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud2_Segundos.Location = new System.Drawing.Point(590, 225);
             this.nud2_Segundos.Maximum = new decimal(new int[] {
@@ -537,6 +542,7 @@
             // 
             // nud2_Minutos
             // 
+            this.nud2_Minutos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nud2_Minutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud2_Minutos.Location = new System.Drawing.Point(501, 225);
             this.nud2_Minutos.Maximum = new decimal(new int[] {
@@ -666,6 +672,7 @@
             this.Controls.Add(this.pnl_ListaContas);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "Frm_Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).EndInit();
             this.pnl_ListaContas.ResumeLayout(false);

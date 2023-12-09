@@ -194,7 +194,9 @@
             this.Controls.Add(this.chb_Offline);
             this.Controls.Add(this.cbb_Idioma);
             this.Controls.Add(this.lbl_Idioma);
+            this.MaximizeBox = false;
             this.Name = "Frm_Settings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Back)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

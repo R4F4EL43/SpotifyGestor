@@ -172,6 +172,9 @@
             // 
             // pnl_ChangePass
             // 
+            this.pnl_ChangePass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_ChangePass.Controls.Add(this.lbl2_Title);
             this.pnl_ChangePass.Controls.Add(this.btn2_Guardar);
             this.pnl_ChangePass.Controls.Add(this.lbl2_ConfirmPassword);
@@ -181,6 +184,7 @@
             this.pnl_ChangePass.Controls.Add(this.txt2_NewPassword);
             this.pnl_ChangePass.Controls.Add(this.txt2_OldPassword);
             this.pnl_ChangePass.Location = new System.Drawing.Point(221, 96);
+            this.pnl_ChangePass.MinimumSize = new System.Drawing.Size(685, 448);
             this.pnl_ChangePass.Name = "pnl_ChangePass";
             this.pnl_ChangePass.Size = new System.Drawing.Size(685, 448);
             this.pnl_ChangePass.TabIndex = 27;
@@ -275,6 +279,9 @@
             // 
             // pnl_Edit
             // 
+            this.pnl_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Edit.Controls.Add(this.lbl1_EditarPerfil);
             this.pnl_Edit.Controls.Add(this.btn1_Save);
             this.pnl_Edit.Controls.Add(this.txt1_Ano);
@@ -492,6 +499,9 @@
             // 
             // pnl_Suport
             // 
+            this.pnl_Suport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Suport.Controls.Add(this.btn5_Enviar);
             this.pnl_Suport.Controls.Add(this.label3);
             this.pnl_Suport.Controls.Add(this.txt5_MensagemSuporte);
@@ -538,6 +548,9 @@
             // 
             // pnl_Plan
             // 
+            this.pnl_Plan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Plan.Controls.Add(this.btn3_AderePremium);
             this.pnl_Plan.Controls.Add(this.lbl3_PLanoSpotify);
             this.pnl_Plan.Controls.Add(this.lvw3_Vantagens);
@@ -600,7 +613,7 @@
             // pbx_Logo
             // 
             this.pbx_Logo.Image = global::SpotifyGestor.Properties.Resources.LogoText;
-            this.pbx_Logo.Location = new System.Drawing.Point(14, 37);
+            this.pbx_Logo.Location = new System.Drawing.Point(12, 12);
             this.pbx_Logo.Name = "pbx_Logo";
             this.pbx_Logo.Size = new System.Drawing.Size(121, 50);
             this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -646,6 +659,7 @@
             this.Controls.Add(this.pnl_Suport);
             this.Controls.Add(this.pnl_Plan);
             this.Name = "Frm_Account";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Account";
             this.pnl_ChangePass.ResumeLayout(false);
             this.pnl_ChangePass.PerformLayout();

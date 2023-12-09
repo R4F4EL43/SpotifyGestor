@@ -54,7 +54,10 @@ namespace SpotifyGestor
 
             new Conta(2, "Matheus Aguiar", "tuezinho@mail.com", "prima", false),
             new Conta(3, "Clériton Silva", "teto@mail.com", "parafal", false),
-            new Conta(4, "Vinicius Lima", "wiu@mail.com", "parafal", false)
+            new Conta(4, "Vinicius Lima", "wiu@mail.com", "parafal", false),
+
+            new Conta(5, "JC", "JCarvalho@inete.net", "C4Life", true),
+            new Conta(6, "JRC", "JCosta@inete.net", "SQL", true)
         };
         public static List<Artista> Artistas = new List<Artista>()
         {
