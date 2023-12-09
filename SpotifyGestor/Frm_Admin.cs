@@ -30,6 +30,15 @@ namespace SpotifyGestor
                 lvw_Contas.Items.Add(item);
             }
         }
+
+        public void FillComboBox()
+        {
+            cbb_Musicas.Items.Clear();
+            foreach (Musica musica in Variaveis.Musicas)
+            {
+                cbb_Musicas.Items.Add(musica.NomeMusica);
+            }
+        }
         #endregion
 
         #region Construtor
@@ -61,6 +70,8 @@ namespace SpotifyGestor
             pnl_CriarPlaylist.Visible = true;
             pnl_ListaContas.Visible = false;
             pnl_logOut.Visible = false;
+
+            FillComboBox();
         }
 
         private void lbl_LogOutGeral_Click(object sender, EventArgs e)
