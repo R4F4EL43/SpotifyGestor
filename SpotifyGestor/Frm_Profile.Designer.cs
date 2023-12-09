@@ -62,8 +62,8 @@
             // lbl_Playlists
             // 
             this.lbl_Playlists.AutoSize = true;
-            this.lbl_Playlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Playlists.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Playlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Playlists.ForeColor = System.Drawing.Color.Red;
             this.lbl_Playlists.Location = new System.Drawing.Point(187, 136);
             this.lbl_Playlists.Name = "lbl_Playlists";
             this.lbl_Playlists.Size = new System.Drawing.Size(66, 16);
@@ -84,10 +84,11 @@
             // lbl_ProfileText
             // 
             this.lbl_ProfileText.AutoSize = true;
-            this.lbl_ProfileText.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_ProfileText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProfileText.ForeColor = System.Drawing.Color.Red;
             this.lbl_ProfileText.Location = new System.Drawing.Point(163, 13);
             this.lbl_ProfileText.Name = "lbl_ProfileText";
-            this.lbl_ProfileText.Size = new System.Drawing.Size(30, 13);
+            this.lbl_ProfileText.Size = new System.Drawing.Size(37, 16);
             this.lbl_ProfileText.TabIndex = 9;
             this.lbl_ProfileText.Text = "Perfil";
             // 
@@ -127,45 +128,45 @@
             this.mni_logOut});
             this.mns_Profile.Name = "mns_Profile";
             this.mns_Profile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.mns_Profile.Size = new System.Drawing.Size(181, 142);
+            this.mns_Profile.Size = new System.Drawing.Size(159, 120);
             // 
             // mni_Conta
             // 
             this.mni_Conta.Name = "mni_Conta";
-            this.mni_Conta.Size = new System.Drawing.Size(180, 22);
+            this.mni_Conta.Size = new System.Drawing.Size(158, 22);
             this.mni_Conta.Text = "Conta";
             this.mni_Conta.Click += new System.EventHandler(this.mni_Conta_Click);
             // 
             // mni_Profile
             // 
             this.mni_Profile.Name = "mni_Profile";
-            this.mni_Profile.Size = new System.Drawing.Size(180, 22);
+            this.mni_Profile.Size = new System.Drawing.Size(158, 22);
             this.mni_Profile.Text = "Perfil";
             this.mni_Profile.Click += new System.EventHandler(this.mni_Profile_Click);
             // 
             // mni_Premium
             // 
             this.mni_Premium.Name = "mni_Premium";
-            this.mni_Premium.Size = new System.Drawing.Size(180, 22);
+            this.mni_Premium.Size = new System.Drawing.Size(158, 22);
             this.mni_Premium.Text = "Premium";
             this.mni_Premium.Click += new System.EventHandler(this.mni_Premium_Click);
             // 
             // mni_Definições
             // 
             this.mni_Definições.Name = "mni_Definições";
-            this.mni_Definições.Size = new System.Drawing.Size(180, 22);
+            this.mni_Definições.Size = new System.Drawing.Size(158, 22);
             this.mni_Definições.Text = "Definições";
             this.mni_Definições.Click += new System.EventHandler(this.mni_Definições_Click);
             // 
             // tss_Separator
             // 
             this.tss_Separator.Name = "tss_Separator";
-            this.tss_Separator.Size = new System.Drawing.Size(177, 6);
+            this.tss_Separator.Size = new System.Drawing.Size(155, 6);
             // 
             // mni_logOut
             // 
             this.mni_logOut.Name = "mni_logOut";
-            this.mni_logOut.Size = new System.Drawing.Size(180, 22);
+            this.mni_logOut.Size = new System.Drawing.Size(158, 22);
             this.mni_logOut.Text = "Terminar Sessão";
             this.mni_logOut.Click += new System.EventHandler(this.mni_logOut_Click);
             // 
