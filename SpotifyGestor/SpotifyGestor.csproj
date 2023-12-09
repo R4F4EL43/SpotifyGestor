@@ -56,6 +56,24 @@
     <Compile Include="Frm_Account.Designer.cs">
       <DependentUpon>Frm_Account.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Admin.Designer.cs">
+      <DependentUpon>Frm_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_CriarConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CriarConta.Designer.cs">
+      <DependentUpon>Frm_CriarConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_EditarConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_EditarConta.Designer.cs">
+      <DependentUpon>Frm_EditarConta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +109,15 @@
     <Compile Include="Variaveis.cs" />
     <EmbeddedResource Include="Frm_Account.resx">
       <DependentUpon>Frm_Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Admin.resx">
+      <DependentUpon>Frm_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CriarConta.resx">
+      <DependentUpon>Frm_CriarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_EditarConta.resx">
+      <DependentUpon>Frm_EditarConta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>
