@@ -40,6 +40,7 @@ namespace SpotifyGestor
         public void FillListView(List<Musica> musicas)
         {
             lvw_Musicas.Items.Clear();
+            lvw_Playlists.Items.Clear();
             foreach (Musica musica in Variaveis.Musicas)
             {
                 ListViewItem item = new ListViewItem();
@@ -278,11 +279,32 @@ namespace SpotifyGestor
 
 
 
-        #endregion
 
 
         #endregion
 
-        
+
+        #region DoubleClick
+
+        private void lvw_Musicas_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvw_Musicas.CheckedItems.Count == 1)
+            {
+
+            }
+        }
+
+        private void lvw_Playlists_DoubleClick(object sender, EventArgs e)
+        {
+            if(lvw_Playlists.CheckedItems.Count == 1)
+            {
+
+            }
+        }
+
+
+        #endregion
+
+        #endregion
     }
 }

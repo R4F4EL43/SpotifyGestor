@@ -45,7 +45,7 @@
             this.ch_Senha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Admin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl1_Contas = new System.Windows.Forms.Label();
-            this.pnl_logOut = new System.Windows.Forms.Panel();
+            this.pnl_LogOut = new System.Windows.Forms.Panel();
             this.lbl_TerminarSessão = new System.Windows.Forms.Label();
             this.btn_TerminarSessão = new System.Windows.Forms.Button();
             this.txt_Texto = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.txt_NomePlaylist = new System.Windows.Forms.TextBox();
             this.lbl_Playlist = new System.Windows.Forms.Label();
             this.lbl_CriarMusica = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_CriarMusica = new System.Windows.Forms.Panel();
             this.txt2_Letra = new System.Windows.Forms.TextBox();
             this.lbl2_Letra = new System.Windows.Forms.Label();
             this.lb2l_Duracao = new System.Windows.Forms.Label();
@@ -83,9 +83,9 @@
             this.erp3_Musica = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).BeginInit();
             this.pnl_ListaContas.SuspendLayout();
-            this.pnl_logOut.SuspendLayout();
+            this.pnl_LogOut.SuspendLayout();
             this.pnl_CriarPlaylist.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnl_CriarMusica.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud2_Segundos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud2_Minutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp2_Nome)).BeginInit();
@@ -283,21 +283,21 @@
             this.lbl1_Contas.TabIndex = 11;
             this.lbl1_Contas.Text = "Contas";
             // 
-            // pnl_logOut
+            // pnl_LogOut
             // 
-            this.pnl_logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnl_LogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_logOut.Controls.Add(this.lbl_TerminarSessão);
-            this.pnl_logOut.Controls.Add(this.btn_TerminarSessão);
-            this.pnl_logOut.Controls.Add(this.txt_Texto);
-            this.pnl_logOut.Controls.Add(this.lbl4_LogOutSubtitle);
-            this.pnl_logOut.Controls.Add(this.lbl4_LogOutTitle);
-            this.pnl_logOut.Location = new System.Drawing.Point(220, 20);
-            this.pnl_logOut.Name = "pnl_logOut";
-            this.pnl_logOut.Size = new System.Drawing.Size(685, 496);
-            this.pnl_logOut.TabIndex = 41;
-            this.pnl_logOut.Visible = false;
+            this.pnl_LogOut.Controls.Add(this.lbl_TerminarSessão);
+            this.pnl_LogOut.Controls.Add(this.btn_TerminarSessão);
+            this.pnl_LogOut.Controls.Add(this.txt_Texto);
+            this.pnl_LogOut.Controls.Add(this.lbl4_LogOutSubtitle);
+            this.pnl_LogOut.Controls.Add(this.lbl4_LogOutTitle);
+            this.pnl_LogOut.Location = new System.Drawing.Point(220, 20);
+            this.pnl_LogOut.Name = "pnl_LogOut";
+            this.pnl_LogOut.Size = new System.Drawing.Size(685, 496);
+            this.pnl_LogOut.TabIndex = 41;
+            this.pnl_LogOut.Visible = false;
             // 
             // lbl_TerminarSessão
             // 
@@ -449,27 +449,41 @@
             this.lbl_CriarMusica.MouseLeave += new System.EventHandler(this.lbl_CriarMusica_MouseLeave);
             this.lbl_CriarMusica.MouseHover += new System.EventHandler(this.lbl_CriarMusica_MouseHover);
             // 
-            // panel1
+            // pnl_CriarMusica
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnl_CriarMusica.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.txt2_Letra);
-            this.panel1.Controls.Add(this.lbl2_Letra);
-            this.panel1.Controls.Add(this.lb2l_Duracao);
-            this.panel1.Controls.Add(this.nud2_Segundos);
-            this.panel1.Controls.Add(this.nud2_Minutos);
-            this.panel1.Controls.Add(this.btn2_CriarMusica);
-            this.panel1.Controls.Add(this.cbb2_Artistas);
-            this.panel1.Controls.Add(this.lbl2_Artista);
-            this.panel1.Controls.Add(this.lbl2_NomeMusica);
-            this.panel1.Controls.Add(this.txt2_NomeMusica);
-            this.panel1.Controls.Add(this.lbl2_CriarMusica);
-            this.panel1.Location = new System.Drawing.Point(220, 20);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(685, 496);
-            this.panel1.TabIndex = 43;
-            this.panel1.Visible = false;
+            this.pnl_CriarMusica.Controls.Add(this.txt2_Letra);
+            this.pnl_CriarMusica.Controls.Add(this.lbl2_Letra);
+            this.pnl_CriarMusica.Controls.Add(this.lb2l_Duracao);
+            this.pnl_CriarMusica.Controls.Add(this.nud2_Segundos);
+            this.pnl_CriarMusica.Controls.Add(this.nud2_Minutos);
+            this.pnl_CriarMusica.Controls.Add(this.btn2_CriarMusica);
+            this.pnl_CriarMusica.Controls.Add(this.cbb2_Artistas);
+            this.pnl_CriarMusica.Controls.Add(this.lbl2_Artista);
+            this.pnl_CriarMusica.Controls.Add(this.lbl2_NomeMusica);
+            this.pnl_CriarMusica.Controls.Add(this.txt2_NomeMusica);
+            this.pnl_CriarMusica.Controls.Add(this.lbl2_CriarMusica);
+            this.pnl_CriarMusica.Location = new System.Drawing.Point(220, 20);
+            this.pnl_CriarMusica.Name = "pnl_CriarMusica";
+            this.pnl_CriarMusica.Size = new System.Drawing.Size(685, 496);
+            this.pnl_CriarMusica.TabIndex = 43;
+            this.pnl_CriarMusica.Visible = false;
+            // 
+            // txt2_Letra
+            // 
+            this.txt2_Letra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt2_Letra.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txt2_Letra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt2_Letra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt2_Letra.Location = new System.Drawing.Point(29, 323);
+            this.txt2_Letra.Multiline = true;
+            this.txt2_Letra.Name = "txt2_Letra";
+            this.txt2_Letra.Size = new System.Drawing.Size(635, 95);
+            this.txt2_Letra.TabIndex = 22;
             // 
             // txt2_Letra
             // 
@@ -493,6 +507,7 @@
             // 
             // lb2l_Duracao
             // 
+            this.lb2l_Duracao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb2l_Duracao.AutoSize = true;
             this.lb2l_Duracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lb2l_Duracao.Location = new System.Drawing.Point(500, 202);
@@ -503,6 +518,7 @@
             // 
             // nud2_Segundos
             // 
+            this.nud2_Segundos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nud2_Segundos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud2_Segundos.Location = new System.Drawing.Point(590, 225);
             this.nud2_Segundos.Maximum = new decimal(new int[] {
@@ -516,6 +532,7 @@
             // 
             // nud2_Minutos
             // 
+            this.nud2_Minutos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nud2_Minutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud2_Minutos.Location = new System.Drawing.Point(501, 225);
             this.nud2_Minutos.Maximum = new decimal(new int[] {
@@ -735,22 +752,23 @@
             this.Controls.Add(this.lbl_LogOutGeral);
             this.Controls.Add(this.lbl_CriarPlaylist);
             this.Controls.Add(this.lbl_ListaContas);
+            this.Controls.Add(this.pnl_CriarMusica);
             this.Controls.Add(this.pnl_CriarPlaylist);
-            this.Controls.Add(this.pnl_logOut);
+            this.Controls.Add(this.pnl_LogOut);
             this.Controls.Add(this.pnl_ListaContas);
-            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "Frm_Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).EndInit();
             this.pnl_ListaContas.ResumeLayout(false);
             this.pnl_ListaContas.PerformLayout();
-            this.pnl_logOut.ResumeLayout(false);
-            this.pnl_logOut.PerformLayout();
+            this.pnl_LogOut.ResumeLayout(false);
+            this.pnl_LogOut.PerformLayout();
             this.pnl_CriarPlaylist.ResumeLayout(false);
             this.pnl_CriarPlaylist.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_CriarMusica.ResumeLayout(false);
+            this.pnl_CriarMusica.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud2_Segundos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud2_Minutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp2_Nome)).EndInit();
@@ -782,7 +800,7 @@
         private System.Windows.Forms.ColumnHeader ch_Senha;
         private System.Windows.Forms.ColumnHeader ch_Admin;
         private System.Windows.Forms.Label lbl1_Contas;
-        private System.Windows.Forms.Panel pnl_logOut;
+        private System.Windows.Forms.Panel pnl_LogOut;
         private System.Windows.Forms.Label lbl_TerminarSessão;
         private System.Windows.Forms.Button btn_TerminarSessão;
         private System.Windows.Forms.TextBox txt_Texto;
@@ -794,7 +812,7 @@
         private System.Windows.Forms.TextBox txt_NomePlaylist;
         private System.Windows.Forms.Label lbl_Playlist;
         private System.Windows.Forms.Label lbl_CriarMusica;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_CriarMusica;
         private System.Windows.Forms.Button btn2_CriarMusica;
         private System.Windows.Forms.ComboBox cbb2_Artistas;
         private System.Windows.Forms.Label lbl2_Artista;
