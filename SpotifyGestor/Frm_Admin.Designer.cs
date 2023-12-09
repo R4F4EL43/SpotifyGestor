@@ -53,8 +53,6 @@
             this.lbl4_LogOutTitle = new System.Windows.Forms.Label();
             this.pnl_CriarPlaylist = new System.Windows.Forms.Panel();
             this.btn_CriarPlaylist = new System.Windows.Forms.Button();
-            this.cbb_Musicas = new System.Windows.Forms.ComboBox();
-            this.lbl_Musicas = new System.Windows.Forms.Label();
             this.lbl_NomePlaylist = new System.Windows.Forms.Label();
             this.txt_NomePlaylist = new System.Windows.Forms.TextBox();
             this.lbl_Playlist = new System.Windows.Forms.Label();
@@ -75,6 +73,14 @@
             this.erp2_Artista = new System.Windows.Forms.ErrorProvider(this.components);
             this.erp2_Duracao = new System.Windows.Forms.ErrorProvider(this.components);
             this.erp2_Letra = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erp3_Nome = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pnl_AdicionarMusica = new System.Windows.Forms.Panel();
+            this.btn3_Adicionar = new System.Windows.Forms.Button();
+            this.cbb3_Musicas = new System.Windows.Forms.ComboBox();
+            this.lbl3_Musicas = new System.Windows.Forms.Label();
+            this.lbl3_AdicionarMusica = new System.Windows.Forms.Label();
+            this.btn3_Terminar = new System.Windows.Forms.Button();
+            this.erp3_Musica = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).BeginInit();
             this.pnl_ListaContas.SuspendLayout();
             this.pnl_LogOut.SuspendLayout();
@@ -86,6 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.erp2_Artista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp2_Duracao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp2_Letra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp3_Nome)).BeginInit();
+            this.pnl_AdicionarMusica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erp3_Musica)).BeginInit();
             this.SuspendLayout();
             // 
             // pbx_Logo
@@ -366,8 +375,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_CriarPlaylist.Controls.Add(this.btn_CriarPlaylist);
-            this.pnl_CriarPlaylist.Controls.Add(this.cbb_Musicas);
-            this.pnl_CriarPlaylist.Controls.Add(this.lbl_Musicas);
             this.pnl_CriarPlaylist.Controls.Add(this.lbl_NomePlaylist);
             this.pnl_CriarPlaylist.Controls.Add(this.txt_NomePlaylist);
             this.pnl_CriarPlaylist.Controls.Add(this.lbl_Playlist);
@@ -390,33 +397,6 @@
             this.btn_CriarPlaylist.Text = "Criar";
             this.btn_CriarPlaylist.UseVisualStyleBackColor = false;
             this.btn_CriarPlaylist.Click += new System.EventHandler(this.btn_CriarPlaylist_Click);
-            // 
-            // cbb_Musicas
-            // 
-            this.cbb_Musicas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbb_Musicas.BackColor = System.Drawing.SystemColors.Control;
-            this.cbb_Musicas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_Musicas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cbb_Musicas.FormattingEnabled = true;
-            this.cbb_Musicas.Location = new System.Drawing.Point(29, 210);
-            this.cbb_Musicas.Name = "cbb_Musicas";
-            this.cbb_Musicas.Size = new System.Drawing.Size(635, 28);
-            this.cbb_Musicas.TabIndex = 16;
-            // 
-            // lbl_Musicas
-            // 
-            this.lbl_Musicas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Musicas.AutoSize = true;
-            this.lbl_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Musicas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Musicas.Location = new System.Drawing.Point(25, 187);
-            this.lbl_Musicas.Name = "lbl_Musicas";
-            this.lbl_Musicas.Size = new System.Drawing.Size(154, 20);
-            this.lbl_Musicas.TabIndex = 15;
-            this.lbl_Musicas.Text = "Adicionar Musicas";
             // 
             // lbl_NomePlaylist
             // 
@@ -498,6 +478,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt2_Letra.BackColor = System.Drawing.SystemColors.MenuText;
             this.txt2_Letra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt2_Letra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt2_Letra.Location = new System.Drawing.Point(29, 323);
+            this.txt2_Letra.Multiline = true;
+            this.txt2_Letra.Name = "txt2_Letra";
+            this.txt2_Letra.Size = new System.Drawing.Size(635, 95);
+            this.txt2_Letra.TabIndex = 22;
+            // 
+            // txt2_Letra
+            // 
+            this.txt2_Letra.BackColor = System.Drawing.SystemColors.MenuText;
             this.txt2_Letra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt2_Letra.Location = new System.Drawing.Point(29, 323);
             this.txt2_Letra.Multiline = true;
@@ -655,12 +645,108 @@
             this.erp2_Letra.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.erp2_Letra.ContainerControl = this;
             // 
+            // erp3_Nome
+            // 
+            this.erp3_Nome.BlinkRate = 0;
+            this.erp3_Nome.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp3_Nome.ContainerControl = this;
+            // 
+            // pnl_AdicionarMusica
+            // 
+            this.pnl_AdicionarMusica.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_AdicionarMusica.Controls.Add(this.btn3_Terminar);
+            this.pnl_AdicionarMusica.Controls.Add(this.btn3_Adicionar);
+            this.pnl_AdicionarMusica.Controls.Add(this.cbb3_Musicas);
+            this.pnl_AdicionarMusica.Controls.Add(this.lbl3_Musicas);
+            this.pnl_AdicionarMusica.Controls.Add(this.lbl3_AdicionarMusica);
+            this.pnl_AdicionarMusica.Location = new System.Drawing.Point(220, 20);
+            this.pnl_AdicionarMusica.Name = "pnl_AdicionarMusica";
+            this.pnl_AdicionarMusica.Size = new System.Drawing.Size(685, 496);
+            this.pnl_AdicionarMusica.TabIndex = 44;
+            this.pnl_AdicionarMusica.Visible = false;
+            this.pnl_AdicionarMusica.VisibleChanged += new System.EventHandler(this.pnl_AdicionarMusica_VisibleChanged);
+            // 
+            // btn3_Adicionar
+            // 
+            this.btn3_Adicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn3_Adicionar.BackColor = System.Drawing.SystemColors.MenuText;
+            this.btn3_Adicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3_Adicionar.ForeColor = System.Drawing.Color.Red;
+            this.btn3_Adicionar.Location = new System.Drawing.Point(543, 173);
+            this.btn3_Adicionar.Name = "btn3_Adicionar";
+            this.btn3_Adicionar.Size = new System.Drawing.Size(121, 37);
+            this.btn3_Adicionar.TabIndex = 17;
+            this.btn3_Adicionar.Text = "Adicionar";
+            this.btn3_Adicionar.UseVisualStyleBackColor = false;
+            this.btn3_Adicionar.Click += new System.EventHandler(this.btn3_Adicionar_Click);
+            // 
+            // cbb3_Musicas
+            // 
+            this.cbb3_Musicas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb3_Musicas.BackColor = System.Drawing.SystemColors.Control;
+            this.cbb3_Musicas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb3_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb3_Musicas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbb3_Musicas.FormattingEnabled = true;
+            this.cbb3_Musicas.Location = new System.Drawing.Point(29, 133);
+            this.cbb3_Musicas.Name = "cbb3_Musicas";
+            this.cbb3_Musicas.Size = new System.Drawing.Size(635, 28);
+            this.cbb3_Musicas.TabIndex = 16;
+            // 
+            // lbl3_Musicas
+            // 
+            this.lbl3_Musicas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl3_Musicas.AutoSize = true;
+            this.lbl3_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3_Musicas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl3_Musicas.Location = new System.Drawing.Point(25, 110);
+            this.lbl3_Musicas.Name = "lbl3_Musicas";
+            this.lbl3_Musicas.Size = new System.Drawing.Size(154, 20);
+            this.lbl3_Musicas.TabIndex = 15;
+            this.lbl3_Musicas.Text = "Adicionar Musicas";
+            // 
+            // lbl3_AdicionarMusica
+            // 
+            this.lbl3_AdicionarMusica.AutoSize = true;
+            this.lbl3_AdicionarMusica.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3_AdicionarMusica.ForeColor = System.Drawing.Color.Red;
+            this.lbl3_AdicionarMusica.Location = new System.Drawing.Point(24, 25);
+            this.lbl3_AdicionarMusica.Name = "lbl3_AdicionarMusica";
+            this.lbl3_AdicionarMusica.Size = new System.Drawing.Size(225, 29);
+            this.lbl3_AdicionarMusica.TabIndex = 11;
+            this.lbl3_AdicionarMusica.Text = "Adicionar Músicas";
+            // 
+            // btn3_Terminar
+            // 
+            this.btn3_Terminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn3_Terminar.BackColor = System.Drawing.SystemColors.MenuText;
+            this.btn3_Terminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3_Terminar.ForeColor = System.Drawing.Color.Red;
+            this.btn3_Terminar.Location = new System.Drawing.Point(543, 442);
+            this.btn3_Terminar.Name = "btn3_Terminar";
+            this.btn3_Terminar.Size = new System.Drawing.Size(121, 37);
+            this.btn3_Terminar.TabIndex = 18;
+            this.btn3_Terminar.Text = "Terminar";
+            this.btn3_Terminar.UseVisualStyleBackColor = false;
+            this.btn3_Terminar.Click += new System.EventHandler(this.btn3_Terminar_Click);
+            // 
+            // erp3_Musica
+            // 
+            this.erp3_Musica.BlinkRate = 0;
+            this.erp3_Musica.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp3_Musica.ContainerControl = this;
+            // 
             // Frm_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(920, 581);
+            this.Controls.Add(this.pnl_AdicionarMusica);
             this.Controls.Add(this.lbl_CriarMusica);
             this.Controls.Add(this.pbx_Logo);
             this.Controls.Add(this.lbl_LogOutGeral);
@@ -689,6 +775,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.erp2_Artista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp2_Duracao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp2_Letra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp3_Nome)).EndInit();
+            this.pnl_AdicionarMusica.ResumeLayout(false);
+            this.pnl_AdicionarMusica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erp3_Musica)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -718,8 +808,6 @@
         private System.Windows.Forms.Label lbl4_LogOutTitle;
         private System.Windows.Forms.Panel pnl_CriarPlaylist;
         private System.Windows.Forms.Button btn_CriarPlaylist;
-        private System.Windows.Forms.ComboBox cbb_Musicas;
-        private System.Windows.Forms.Label lbl_Musicas;
         private System.Windows.Forms.Label lbl_NomePlaylist;
         private System.Windows.Forms.TextBox txt_NomePlaylist;
         private System.Windows.Forms.Label lbl_Playlist;
@@ -741,5 +829,13 @@
         private System.Windows.Forms.ErrorProvider erp2_Duracao;
         private System.Windows.Forms.ErrorProvider erp2_Letra;
         private System.Windows.Forms.CheckBox chk1_User;
+        private System.Windows.Forms.ErrorProvider erp3_Nome;
+        private System.Windows.Forms.Panel pnl_AdicionarMusica;
+        private System.Windows.Forms.Button btn3_Adicionar;
+        private System.Windows.Forms.ComboBox cbb3_Musicas;
+        private System.Windows.Forms.Label lbl3_Musicas;
+        private System.Windows.Forms.Label lbl3_AdicionarMusica;
+        private System.Windows.Forms.Button btn3_Terminar;
+        private System.Windows.Forms.ErrorProvider erp3_Musica;
     }
 }
