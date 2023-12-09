@@ -16,7 +16,7 @@ namespace SpotifyGestor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Admin());
+            Application.Run(new Frm_Login());
         }
     }
 }

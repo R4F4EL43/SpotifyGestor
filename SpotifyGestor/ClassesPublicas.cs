@@ -25,6 +25,18 @@ namespace SpotifyGestor
             this._playLists = new List<Playlist>();
         }
 
+        public Conta(int id, string nome, string email, string password, bool isAdmin)
+        {
+            this._idConta = id;
+            this.Nome = nome;
+            this.Email = email;
+            this.Password = password;
+            this._dataNasc = DateTime.Today;
+            this.IsPremium = false;
+            this.IsAdmin = isAdmin;
+            this._playLists = new List<Playlist>();
+        }
+
 
         #endregion
 
@@ -195,6 +207,16 @@ namespace SpotifyGestor
             _musicas = new List<Musica>();
         }
 
+        public Artista(int idArtista, string nomeArtistico, bool verificado, Conta conta)
+        {
+            this._idArtista = idArtista;
+            this.NomeArtistico = nomeArtistico;
+            this.Verificado = verificado;
+            this.Conta = conta;
+            this._albums = new List<Album>();
+            this._musicas = new List<Musica>();
+        }
+
 
         #endregion
 
@@ -351,6 +373,15 @@ namespace SpotifyGestor
             this.Artista = artista;
         }
 
+        public Musica(int idMusica, string nomeMusica, int duracao, string letra, Artista artista)
+        {
+            this._idMusica = idMusica;
+            this.NomeMusica = nomeMusica;
+            this.Duracao = duracao;
+            this.Letra = letra;
+            this.Artista = artista;
+        }
+
 
         #endregion
 
@@ -465,6 +496,16 @@ namespace SpotifyGestor
         public Album(string nome, Artista artista)
         {
             this.SetID();
+            this.Nome = nome;
+            this._duracao = 0;
+            this._descricao = "";
+            this.Artista = artista;
+            this._musicas = new List<Musica>();
+        }
+
+        public Album(int idAlbum, string nome, Artista artista)
+        {
+            this._idAlbum = idAlbum;
             this.Nome = nome;
             this._duracao = 0;
             this._descricao = "";
@@ -616,6 +657,14 @@ namespace SpotifyGestor
         public Playlist(string nome)
         {
             SetID();
+            this.Nome = nome;
+            this._duracao = 0;
+            this._musicas = new List<Musica>();
+        }
+
+        public Playlist(int idPlaylist, string nome)
+        {
+            this._idPlaylist = idPlaylist;
             this.Nome = nome;
             this._duracao = 0;
             this._musicas = new List<Musica>();
