@@ -192,5 +192,8 @@
     <None Include="Resources\nota-musical1.png" />
     <Content Include="Resources\teste-playlist.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="JSON\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

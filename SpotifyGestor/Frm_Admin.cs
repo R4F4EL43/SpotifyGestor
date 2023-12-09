@@ -237,7 +237,11 @@ namespace SpotifyGestor
             form2.Show();
         }
 
-       
+        private void btn_GuardarJSON_Click(object sender, EventArgs e)
+        {                        
+            Variaveis.WriteJSON(Environment.GetFolderPath(Environment.SpecialFolder.Desktop).ToString());
+        }
+
         #endregion
 
 
@@ -441,6 +445,8 @@ namespace SpotifyGestor
                 lvw1_Contas.Items.Add(item);
             }
         }
+
+
 
 
 

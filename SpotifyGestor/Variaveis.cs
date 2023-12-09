@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -41,9 +43,27 @@ namespace SpotifyGestor
 
 
 
-        public static void WriteJSON()
+        public static void WriteJSON(string path)
         {
+            //Ficheiro JSON das Contas
+            string finalPath = Path.Combine(path, "Contas.json");
+            string jsonString = JsonConvert.SerializeObject(Contas, Formatting.Indented);
+            File.WriteAllText(finalPath, jsonString);
 
+            //Ficheiro JSON dos Artistas
+            finalPath = Path.Combine(path, "Artistas.json");
+            jsonString = JsonConvert.SerializeObject(Artistas, Formatting.Indented);
+            File.WriteAllText(finalPath, jsonString);
+
+            //Ficheiro JSON das Musicas
+            finalPath = Path.Combine(path, "Musicas.json");
+            jsonString = JsonConvert.SerializeObject(Musicas, Formatting.Indented);
+            File.WriteAllText(finalPath, jsonString);
+
+            //Ficheiro JSON das Playlists
+            finalPath = Path.Combine(path, "Playlists.json");
+            jsonString = JsonConvert.SerializeObject(Playlist, Formatting.Indented);
+            File.WriteAllText(finalPath, jsonString);
         }
 
 
