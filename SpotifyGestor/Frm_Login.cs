@@ -136,7 +136,7 @@ namespace SpotifyGestor
         private void lbl_Signup_MouseHover(object sender, EventArgs e)
         {
             Cursor = Cursors.Hand;
-            lbl_Signup.Font = new Font(lbl_Signup.Font, FontStyle.Underline);
+            lbl_Signup.Font = new Font(lbl_Signup.Font, FontStyle.Bold | FontStyle.Underline);
         }
 
 

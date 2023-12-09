@@ -50,6 +50,8 @@ namespace SpotifyGestor
 
         private void Frm_Home_Load(object sender, EventArgs e)
         {
+            pnl_Home.Visible = true;
+            pnl_Search.Visible = false;
 
             if (LoggedUser.Playlists.Count != 0)
             {
@@ -102,12 +104,113 @@ namespace SpotifyGestor
 
 
 
+        #region Label
+
+        #region Label:Hover
+
+        private void lbl_Inicio_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            lbl_Inicio.Font = new Font(lbl_Inicio.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+
+        private void lbl_Search_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            lbl_Search.Font = new Font(lbl_Search.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+
+
+        #endregion
+
+
+
+        #region Label:Leave
+
+        private void lbl_Inicio_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            lbl_Inicio.Font = new Font(lbl_Inicio.Font, FontStyle.Regular);
+        }
+
+        private void lbl_Search_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            lbl_Search.Font = new Font(lbl_Search.Font, FontStyle.Regular);
+        }
+
+
+        #endregion
+
+
+
+        #region Label:Click
+
+        private void lbl_Inicio_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnl_Home.Visible = false;
+            pnl_Search.Visible = false;
+        }
+
+        private void lbl_Search_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnl_Home.Visible = false;
+            pnl_Search.Visible = false;
+        }
+
+
+        #endregion
+
+
+        #endregion
+
+
+
         #region PictureBox
+
+        #region PictureBox:Hover
+
+        private void pbx_Logo_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            pbx_Logo.Size = new Size(123, 52);
+        }
+
+
+        #endregion
+
+
+
+        #region PictureBox:Leave
+
+        private void pbx_Logo_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            pbx_Logo.Size = new Size(121, 50);
+        }
+
+
+        #endregion
+
+
+
+        #region PictureBox:Click
+
+        private void pbx_Logo_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Hide();
+            var form2 = new Frm_Home(LoggedUser);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
 
         private void pcb_ProfileIcon_MouseClick(object sender, MouseEventArgs e)
         {
             mns_Profile.Show(MousePosition.X - 130, MousePosition.Y + 20);
         }
+
+
+        #endregion
 
 
         #endregion
@@ -155,11 +258,13 @@ namespace SpotifyGestor
         }
 
 
+
+
+
         #endregion
 
 
         #endregion
-
-
+        
     }
 }

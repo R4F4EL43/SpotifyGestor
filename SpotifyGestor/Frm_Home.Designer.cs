@@ -40,7 +40,7 @@
             this.lbl_Search = new System.Windows.Forms.Label();
             this.lbl_Inicio = new System.Windows.Forms.Label();
             this.pcb_ProfileIcon = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbx_Logo = new System.Windows.Forms.PictureBox();
             this.mns_Profile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mni_Conta = new System.Windows.Forms.ToolStripMenuItem();
             this.mni_Perfil = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +49,7 @@
             this.mni_Separador = new System.Windows.Forms.ToolStripSeparator();
             this.mni_TerminarSessao = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_ProfileIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).BeginInit();
             this.mns_Profile.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,12 +97,12 @@
             // txt_Library
             // 
             this.txt_Library.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txt_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Library.ForeColor = System.Drawing.SystemColors.Window;
             this.txt_Library.Location = new System.Drawing.Point(19, 166);
             this.txt_Library.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Library.Name = "txt_Library";
-            this.txt_Library.Size = new System.Drawing.Size(121, 30);
+            this.txt_Library.Size = new System.Drawing.Size(121, 22);
             this.txt_Library.TabIndex = 23;
             this.txt_Library.TextChanged += new System.EventHandler(this.txt_Library_TextChanged);
             // 
@@ -116,6 +116,7 @@
             // lbl_Search
             // 
             this.lbl_Search.AutoSize = true;
+            this.lbl_Search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Search.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_Search.Location = new System.Drawing.Point(15, 118);
@@ -123,10 +124,14 @@
             this.lbl_Search.Size = new System.Drawing.Size(82, 24);
             this.lbl_Search.TabIndex = 21;
             this.lbl_Search.Text = "Procurar";
+            this.lbl_Search.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_Search_MouseClick);
+            this.lbl_Search.MouseLeave += new System.EventHandler(this.lbl_Search_MouseLeave);
+            this.lbl_Search.MouseHover += new System.EventHandler(this.lbl_Search_MouseHover);
             // 
             // lbl_Inicio
             // 
             this.lbl_Inicio.AutoSize = true;
+            this.lbl_Inicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Inicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Inicio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_Inicio.Location = new System.Drawing.Point(15, 79);
@@ -134,6 +139,9 @@
             this.lbl_Inicio.Size = new System.Drawing.Size(54, 24);
             this.lbl_Inicio.TabIndex = 20;
             this.lbl_Inicio.Text = "Início";
+            this.lbl_Inicio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_Inicio_MouseClick);
+            this.lbl_Inicio.MouseLeave += new System.EventHandler(this.lbl_Inicio_MouseLeave);
+            this.lbl_Inicio.MouseHover += new System.EventHandler(this.lbl_Inicio_MouseHover);
             // 
             // pcb_ProfileIcon
             // 
@@ -147,15 +155,18 @@
             this.pcb_ProfileIcon.TabStop = false;
             this.pcb_ProfileIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pcb_ProfileIcon_MouseClick);
             // 
-            // pictureBox1
+            // pbx_Logo
             // 
-            this.pictureBox1.Image = global::SpotifyGestor.Properties.Resources.LogoText;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
+            this.pbx_Logo.Image = global::SpotifyGestor.Properties.Resources.LogoText;
+            this.pbx_Logo.Location = new System.Drawing.Point(19, 27);
+            this.pbx_Logo.Name = "pbx_Logo";
+            this.pbx_Logo.Size = new System.Drawing.Size(121, 50);
+            this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbx_Logo.TabIndex = 26;
+            this.pbx_Logo.TabStop = false;
+            this.pbx_Logo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbx_Logo_MouseClick);
+            this.pbx_Logo.MouseLeave += new System.EventHandler(this.pbx_Logo_MouseLeave);
+            this.pbx_Logo.MouseHover += new System.EventHandler(this.pbx_Logo_MouseHover);
             // 
             // mns_Profile
             // 
@@ -168,45 +179,45 @@
             this.mni_TerminarSessao});
             this.mns_Profile.Name = "mns_Profile";
             this.mns_Profile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.mns_Profile.Size = new System.Drawing.Size(181, 142);
+            this.mns_Profile.Size = new System.Drawing.Size(159, 120);
             // 
             // mni_Conta
             // 
             this.mni_Conta.Name = "mni_Conta";
-            this.mni_Conta.Size = new System.Drawing.Size(180, 22);
+            this.mni_Conta.Size = new System.Drawing.Size(158, 22);
             this.mni_Conta.Text = "Conta";
             this.mni_Conta.Click += new System.EventHandler(this.mni_Conta_Click);
             // 
             // mni_Perfil
             // 
             this.mni_Perfil.Name = "mni_Perfil";
-            this.mni_Perfil.Size = new System.Drawing.Size(180, 22);
+            this.mni_Perfil.Size = new System.Drawing.Size(158, 22);
             this.mni_Perfil.Text = "Perfil";
             this.mni_Perfil.Click += new System.EventHandler(this.mni_Perfil_Click);
             // 
             // mni_Premium
             // 
             this.mni_Premium.Name = "mni_Premium";
-            this.mni_Premium.Size = new System.Drawing.Size(180, 22);
+            this.mni_Premium.Size = new System.Drawing.Size(158, 22);
             this.mni_Premium.Text = "Premium";
             this.mni_Premium.Click += new System.EventHandler(this.mni_Premium_Click);
             // 
             // mni_Definicoes
             // 
             this.mni_Definicoes.Name = "mni_Definicoes";
-            this.mni_Definicoes.Size = new System.Drawing.Size(180, 22);
+            this.mni_Definicoes.Size = new System.Drawing.Size(158, 22);
             this.mni_Definicoes.Text = "Definições";
             this.mni_Definicoes.Click += new System.EventHandler(this.mni_Definicoes_Click);
             // 
             // mni_Separador
             // 
             this.mni_Separador.Name = "mni_Separador";
-            this.mni_Separador.Size = new System.Drawing.Size(177, 6);
+            this.mni_Separador.Size = new System.Drawing.Size(155, 6);
             // 
             // mni_TerminarSessao
             // 
             this.mni_TerminarSessao.Name = "mni_TerminarSessao";
-            this.mni_TerminarSessao.Size = new System.Drawing.Size(180, 22);
+            this.mni_TerminarSessao.Size = new System.Drawing.Size(158, 22);
             this.mni_TerminarSessao.Text = "Terminar Sessão";
             this.mni_TerminarSessao.Click += new System.EventHandler(this.mni_TerminarSessao_Click);
             // 
@@ -217,7 +228,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(920, 581);
             this.Controls.Add(this.pcb_ProfileIcon);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbx_Logo);
             this.Controls.Add(this.pnl_Search);
             this.Controls.Add(this.lvw_Library);
             this.Controls.Add(this.txt_Library);
@@ -228,7 +239,7 @@
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Frm_Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcb_ProfileIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).EndInit();
             this.mns_Profile.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,7 +248,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbx_Logo;
         private System.Windows.Forms.Panel pnl_Search;
         private System.Windows.Forms.ListView lvw_Library;
         private System.Windows.Forms.TextBox txt_Library;

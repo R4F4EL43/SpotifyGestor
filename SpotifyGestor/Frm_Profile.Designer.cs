@@ -127,42 +127,47 @@
             this.mni_logOut});
             this.mns_Profile.Name = "mns_Profile";
             this.mns_Profile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.mns_Profile.Size = new System.Drawing.Size(159, 120);
+            this.mns_Profile.Size = new System.Drawing.Size(181, 142);
             // 
             // mni_Conta
             // 
             this.mni_Conta.Name = "mni_Conta";
-            this.mni_Conta.Size = new System.Drawing.Size(158, 22);
+            this.mni_Conta.Size = new System.Drawing.Size(180, 22);
             this.mni_Conta.Text = "Conta";
+            this.mni_Conta.Click += new System.EventHandler(this.mni_Conta_Click);
             // 
             // mni_Profile
             // 
             this.mni_Profile.Name = "mni_Profile";
-            this.mni_Profile.Size = new System.Drawing.Size(158, 22);
+            this.mni_Profile.Size = new System.Drawing.Size(180, 22);
             this.mni_Profile.Text = "Perfil";
+            this.mni_Profile.Click += new System.EventHandler(this.mni_Profile_Click);
             // 
             // mni_Premium
             // 
             this.mni_Premium.Name = "mni_Premium";
-            this.mni_Premium.Size = new System.Drawing.Size(158, 22);
+            this.mni_Premium.Size = new System.Drawing.Size(180, 22);
             this.mni_Premium.Text = "Premium";
+            this.mni_Premium.Click += new System.EventHandler(this.mni_Premium_Click);
             // 
             // mni_Definições
             // 
             this.mni_Definições.Name = "mni_Definições";
-            this.mni_Definições.Size = new System.Drawing.Size(158, 22);
+            this.mni_Definições.Size = new System.Drawing.Size(180, 22);
             this.mni_Definições.Text = "Definições";
+            this.mni_Definições.Click += new System.EventHandler(this.mni_Definições_Click);
             // 
             // tss_Separator
             // 
             this.tss_Separator.Name = "tss_Separator";
-            this.tss_Separator.Size = new System.Drawing.Size(155, 6);
+            this.tss_Separator.Size = new System.Drawing.Size(177, 6);
             // 
             // mni_logOut
             // 
             this.mni_logOut.Name = "mni_logOut";
-            this.mni_logOut.Size = new System.Drawing.Size(158, 22);
+            this.mni_logOut.Size = new System.Drawing.Size(180, 22);
             this.mni_logOut.Text = "Terminar Sessão";
+            this.mni_logOut.Click += new System.EventHandler(this.mni_logOut_Click);
             // 
             // Frm_Profile
             // 

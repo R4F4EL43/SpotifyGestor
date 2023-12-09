@@ -606,6 +606,9 @@
             this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_Logo.TabIndex = 31;
             this.pbx_Logo.TabStop = false;
+            this.pbx_Logo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbx_Logo_MouseClick);
+            this.pbx_Logo.MouseLeave += new System.EventHandler(this.pbx_Logo_MouseLeave);
+            this.pbx_Logo.MouseHover += new System.EventHandler(this.pbx_Logo_MouseHover);
             // 
             // erp2_Password
             // 
