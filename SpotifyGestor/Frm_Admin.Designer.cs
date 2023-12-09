@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Admin));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbx_Logo = new System.Windows.Forms.PictureBox();
             this.lbl_LogOutGeral = new System.Windows.Forms.Label();
             this.lbl_CriarPlaylist = new System.Windows.Forms.Label();
             this.lbl_ListaContas = new System.Windows.Forms.Label();
@@ -56,26 +56,27 @@
             this.lbl_NomePlaylist = new System.Windows.Forms.Label();
             this.txt_NomePlaylist = new System.Windows.Forms.TextBox();
             this.lbl_Playlist = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).BeginInit();
             this.pnl_ListaContas.SuspendLayout();
             this.pnl_logOut.SuspendLayout();
             this.pnl_CriarPlaylist.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbx_Logo
             // 
-            this.pictureBox1.Image = global::SpotifyGestor.Properties.Resources.LogoText;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.pbx_Logo.Image = global::SpotifyGestor.Properties.Resources.LogoText;
+            this.pbx_Logo.Location = new System.Drawing.Point(12, 12);
+            this.pbx_Logo.Name = "pbx_Logo";
+            this.pbx_Logo.Size = new System.Drawing.Size(120, 50);
+            this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbx_Logo.TabIndex = 38;
+            this.pbx_Logo.TabStop = false;
+            this.pbx_Logo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbx_Logo_MouseClick);
+            this.pbx_Logo.MouseLeave += new System.EventHandler(this.pbx_Logo_MouseLeave);
+            this.pbx_Logo.MouseHover += new System.EventHandler(this.pbx_Logo_MouseHover);
             // 
             // lbl_LogOutGeral
             // 
-            this.lbl_LogOutGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_LogOutGeral.AutoSize = true;
             this.lbl_LogOutGeral.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_LogOutGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,14 +86,12 @@
             this.lbl_LogOutGeral.Size = new System.Drawing.Size(153, 24);
             this.lbl_LogOutGeral.TabIndex = 37;
             this.lbl_LogOutGeral.Text = "Terminar Sessão";
-            this.lbl_LogOutGeral.Click += new System.EventHandler(this.lbl_LogOutGeral_Click);
+            this.lbl_LogOutGeral.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_LogOutGeral_MouseClick);
             this.lbl_LogOutGeral.MouseLeave += new System.EventHandler(this.lbl_LogOutGeral_MouseLeave);
             this.lbl_LogOutGeral.MouseHover += new System.EventHandler(this.lbl_LogOutGeral_MouseHover);
             // 
             // lbl_CriarPlaylist
             // 
-            this.lbl_CriarPlaylist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_CriarPlaylist.AutoSize = true;
             this.lbl_CriarPlaylist.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_CriarPlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,14 +101,12 @@
             this.lbl_CriarPlaylist.Size = new System.Drawing.Size(109, 24);
             this.lbl_CriarPlaylist.TabIndex = 36;
             this.lbl_CriarPlaylist.Text = "Criar playlist";
-            this.lbl_CriarPlaylist.Click += new System.EventHandler(this.lbl_CriarPlaylist_Click);
+            this.lbl_CriarPlaylist.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_CriarPlaylist_MouseClick);
             this.lbl_CriarPlaylist.MouseLeave += new System.EventHandler(this.lbl_CriarPlaylist_MouseLeave);
             this.lbl_CriarPlaylist.MouseHover += new System.EventHandler(this.lbl_CriarPlaylist_MouseHover);
             // 
             // lbl_ListaContas
             // 
-            this.lbl_ListaContas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_ListaContas.AutoSize = true;
             this.lbl_ListaContas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_ListaContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,12 +116,15 @@
             this.lbl_ListaContas.Size = new System.Drawing.Size(142, 24);
             this.lbl_ListaContas.TabIndex = 35;
             this.lbl_ListaContas.Text = "Lista das contas";
-            this.lbl_ListaContas.Click += new System.EventHandler(this.lbl_ListaContas_Click);
+            this.lbl_ListaContas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_ListaContas_MouseClick);
             this.lbl_ListaContas.MouseLeave += new System.EventHandler(this.lbl_ListaContas_MouseLeave);
             this.lbl_ListaContas.MouseHover += new System.EventHandler(this.lbl_ListaContas_MouseHover);
             // 
             // pnl_ListaContas
             // 
+            this.pnl_ListaContas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_ListaContas.Controls.Add(this.btn_EliminarConta);
             this.pnl_ListaContas.Controls.Add(this.btn_EditarConta);
             this.pnl_ListaContas.Controls.Add(this.btn_CriarConta);
@@ -138,6 +138,7 @@
             // 
             // btn_EliminarConta
             // 
+            this.btn_EliminarConta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_EliminarConta.BackColor = System.Drawing.SystemColors.MenuText;
             this.btn_EliminarConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EliminarConta.ForeColor = System.Drawing.Color.Red;
@@ -151,6 +152,7 @@
             // 
             // btn_EditarConta
             // 
+            this.btn_EditarConta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_EditarConta.BackColor = System.Drawing.SystemColors.MenuText;
             this.btn_EditarConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditarConta.ForeColor = System.Drawing.Color.Red;
@@ -164,6 +166,7 @@
             // 
             // btn_CriarConta
             // 
+            this.btn_CriarConta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_CriarConta.BackColor = System.Drawing.SystemColors.MenuText;
             this.btn_CriarConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CriarConta.ForeColor = System.Drawing.Color.Red;
@@ -177,6 +180,9 @@
             // 
             // lvw_Contas
             // 
+            this.lvw_Contas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvw_Contas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lvw_Contas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ch_Nome,
@@ -216,6 +222,8 @@
             // 
             // lbl_Contas
             // 
+            this.lbl_Contas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Contas.AutoSize = true;
             this.lbl_Contas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Contas.ForeColor = System.Drawing.Color.Red;
@@ -243,6 +251,8 @@
             // 
             // lbl_TerminarSessão
             // 
+            this.lbl_TerminarSessão.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_TerminarSessão.AutoSize = true;
             this.lbl_TerminarSessão.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TerminarSessão.ForeColor = System.Drawing.Color.Red;
@@ -268,8 +278,7 @@
             // 
             // txt_Texto
             // 
-            this.txt_Texto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_Texto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Texto.BackColor = System.Drawing.SystemColors.MenuText;
             this.txt_Texto.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -286,8 +295,7 @@
             // 
             // lbl4_LogOutSubtitle
             // 
-            this.lbl4_LogOutSubtitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbl4_LogOutSubtitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl4_LogOutSubtitle.AutoSize = true;
             this.lbl4_LogOutSubtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,8 +308,7 @@
             // 
             // lbl4_LogOutTitle
             // 
-            this.lbl4_LogOutTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbl4_LogOutTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl4_LogOutTitle.AutoSize = true;
             this.lbl4_LogOutTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,6 +321,9 @@
             // 
             // pnl_CriarPlaylist
             // 
+            this.pnl_CriarPlaylist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_CriarPlaylist.Controls.Add(this.btn_CriarPlaylist);
             this.pnl_CriarPlaylist.Controls.Add(this.cbb_Musicas);
             this.pnl_CriarPlaylist.Controls.Add(this.lbl_Musicas);
@@ -328,6 +338,7 @@
             // 
             // btn_CriarPlaylist
             // 
+            this.btn_CriarPlaylist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_CriarPlaylist.BackColor = System.Drawing.SystemColors.MenuText;
             this.btn_CriarPlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CriarPlaylist.ForeColor = System.Drawing.Color.Red;
@@ -341,6 +352,8 @@
             // 
             // cbb_Musicas
             // 
+            this.cbb_Musicas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_Musicas.BackColor = System.Drawing.SystemColors.Control;
             this.cbb_Musicas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -353,6 +366,8 @@
             // 
             // lbl_Musicas
             // 
+            this.lbl_Musicas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Musicas.AutoSize = true;
             this.lbl_Musicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Musicas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -364,6 +379,8 @@
             // 
             // lbl_NomePlaylist
             // 
+            this.lbl_NomePlaylist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_NomePlaylist.AutoSize = true;
             this.lbl_NomePlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NomePlaylist.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -375,6 +392,8 @@
             // 
             // txt_NomePlaylist
             // 
+            this.txt_NomePlaylist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_NomePlaylist.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_NomePlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NomePlaylist.ForeColor = System.Drawing.SystemColors.Control;
@@ -400,7 +419,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(920, 581);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbx_Logo);
             this.Controls.Add(this.lbl_LogOutGeral);
             this.Controls.Add(this.lbl_CriarPlaylist);
             this.Controls.Add(this.lbl_ListaContas);
@@ -410,7 +429,7 @@
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "Frm_Admin";
             this.Text = "Admin";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).EndInit();
             this.pnl_ListaContas.ResumeLayout(false);
             this.pnl_ListaContas.PerformLayout();
             this.pnl_logOut.ResumeLayout(false);
@@ -424,7 +443,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbx_Logo;
         private System.Windows.Forms.Label lbl_LogOutGeral;
         private System.Windows.Forms.Label lbl_CriarPlaylist;
         private System.Windows.Forms.Label lbl_ListaContas;

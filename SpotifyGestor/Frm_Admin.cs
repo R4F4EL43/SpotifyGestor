@@ -13,6 +13,16 @@ namespace SpotifyGestor
 {
     public partial class Frm_Admin : Form
     {
+
+        #region Variaveis
+
+        Conta LoggedUser = null;
+
+
+        #endregion
+
+
+
         #region Metodos proprios
 
         public void FillListView()
@@ -41,27 +51,20 @@ namespace SpotifyGestor
         }
         #endregion
 
+
+
         #region Construtor
 
-        public Frm_Admin()
+        public Frm_Admin(Conta User)
         {
             InitializeComponent();
+            LoggedUser = User;
         }
 
         #endregion
 
-        #region Eventos
 
-        #region Clicks
 
-        private void lbl_ListaContas_Click(object sender, EventArgs e)
-        {
-            pnl_ListaContas.Visible = true;
-            pnl_CriarPlaylist.Visible = false;
-            pnl_logOut.Visible = false;
-
-            //Preencher ListView...            
-            FillListView();
 
         }
 
@@ -74,12 +77,7 @@ namespace SpotifyGestor
             FillComboBox();
         }
 
-        private void lbl_LogOutGeral_Click(object sender, EventArgs e)
-        {
-            pnl_logOut.Visible = true;
-            pnl_CriarPlaylist.Visible = false;
-            pnl_ListaContas.Visible = false;
-        }
+        #region Clicks
 
         private void btn_TerminarSessão_Click(object sender, EventArgs e)
         {
@@ -155,30 +153,33 @@ namespace SpotifyGestor
 
         #endregion
 
+
+
+        #region Label
+
         #region Label:Hover
 
         private void lbl_ListaContas_MouseHover(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.Hand;
-            lbl_ListaContas.Font = new Font(lbl_ListaContas.Font, FontStyle.Bold);
-            lbl_ListaContas.Font = new Font(lbl_ListaContas.Font, FontStyle.Underline);
+            lbl_ListaContas.Font = new Font(lbl_ListaContas.Font, FontStyle.Bold | FontStyle.Underline);
         }
 
         private void lbl_CriarPlaylist_MouseHover(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.Hand;
-            lbl_CriarPlaylist.Font = new Font(lbl_CriarPlaylist.Font, FontStyle.Bold);
-            lbl_CriarPlaylist.Font = new Font(lbl_CriarPlaylist.Font, FontStyle.Underline);
+            lbl_CriarPlaylist.Font = new Font(lbl_CriarPlaylist.Font, FontStyle.Bold | FontStyle.Underline);
         }
 
         private void lbl_LogOutGeral_MouseHover(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.Hand;
-            lbl_LogOutGeral.Font = new Font(lbl_LogOutGeral.Font, FontStyle.Bold);
-            lbl_LogOutGeral.Font = new Font(lbl_LogOutGeral.Font, FontStyle.Underline);
+            lbl_LogOutGeral.Font = new Font(lbl_LogOutGeral.Font, FontStyle.Bold | FontStyle.Underline);
         }
 
         #endregion
+
+
 
         #region Label:Leave
 
@@ -203,6 +204,89 @@ namespace SpotifyGestor
 
         #endregion
 
+
+
+        #region Label:Click
+
+        private void lbl_ListaContas_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnl_ListaContas.Visible = true;
+            pnl_CriarPlaylist.Visible = false;
+            pnl_logOut.Visible = false;
+
+            //Preencher ListView...            
+            FillListView();
+        }
+
+        private void lbl_CriarPlaylist_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnl_ListaContas.Visible = true;
+            pnl_CriarPlaylist.Visible = false;
+            pnl_logOut.Visible = false;
+        }
+
+        private void lbl_LogOutGeral_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnl_ListaContas.Visible = true;
+            pnl_CriarPlaylist.Visible = false;
+            pnl_logOut.Visible = false;
+        }
+
+
         #endregion
+
+
+        #endregion
+
+
+
+        #region PictureBox
+
+        #region PictureBox:Hover
+
+        private void pbx_Logo_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            pbx_Logo.Size = new Size(122, 52);
+        }
+
+
+        #endregion
+
+
+
+        #region PictureBox:Leave
+
+        private void pbx_Logo_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            pbx_Logo.Size = new Size(120, 50);
+        }
+
+
+        #endregion
+
+
+
+        #region PictureBox:Click
+
+        private void pbx_Logo_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Hide();
+            var form2 = new Frm_Home(LoggedUser);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
+
+
+        #endregion
+
+
+        #endregion
+
+
+        #endregion
+
+        
     }
 }

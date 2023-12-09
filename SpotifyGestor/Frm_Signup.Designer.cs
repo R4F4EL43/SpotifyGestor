@@ -52,6 +52,8 @@
             // 
             // lbl_Signup
             // 
+            this.lbl_Signup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Signup.AutoSize = true;
             this.lbl_Signup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,6 +69,8 @@
             // 
             // lbl_Question
             // 
+            this.lbl_Question.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Question.AutoSize = true;
             this.lbl_Question.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Question.ForeColor = System.Drawing.SystemColors.Control;
@@ -78,6 +82,8 @@
             // 
             // btn_Registar
             // 
+            this.btn_Registar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Registar.BackColor = System.Drawing.SystemColors.ControlText;
             this.btn_Registar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btn_Registar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -93,6 +99,8 @@
             // 
             // txt_ConfirmSenha
             // 
+            this.txt_ConfirmSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ConfirmSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ConfirmSenha.Location = new System.Drawing.Point(238, 316);
             this.txt_ConfirmSenha.Name = "txt_ConfirmSenha";
@@ -103,6 +111,8 @@
             // 
             // txt_Email
             // 
+            this.txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.Location = new System.Drawing.Point(238, 201);
             this.txt_Email.Name = "txt_Email";
@@ -112,6 +122,8 @@
             // 
             // lbl_ConfirmSenha
             // 
+            this.lbl_ConfirmSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_ConfirmSenha.AutoSize = true;
             this.lbl_ConfirmSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ConfirmSenha.ForeColor = System.Drawing.SystemColors.Control;
@@ -123,6 +135,8 @@
             // 
             // lbl_Email
             // 
+            this.lbl_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Email.AutoSize = true;
             this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Email.ForeColor = System.Drawing.SystemColors.Control;
@@ -134,6 +148,8 @@
             // 
             // pb_Logo
             // 
+            this.pb_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_Logo.Image = global::SpotifyGestor.Properties.Resources.Logo;
             this.pb_Logo.Location = new System.Drawing.Point(292, 35);
             this.pb_Logo.Name = "pb_Logo";
@@ -144,6 +160,8 @@
             // 
             // txt_User
             // 
+            this.txt_User.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_User.Location = new System.Drawing.Point(238, 146);
             this.txt_User.Name = "txt_User";
@@ -153,6 +171,8 @@
             // 
             // lbl_User
             // 
+            this.lbl_User.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_User.AutoSize = true;
             this.lbl_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_User.ForeColor = System.Drawing.SystemColors.Control;
@@ -182,6 +202,8 @@
             // 
             // txt_Senha
             // 
+            this.txt_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Senha.Location = new System.Drawing.Point(238, 265);
             this.txt_Senha.Name = "txt_Senha";
@@ -192,6 +214,8 @@
             // 
             // lbl_Senha
             // 
+            this.lbl_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Senha.AutoSize = true;
             this.lbl_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Senha.ForeColor = System.Drawing.SystemColors.Control;
